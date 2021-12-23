@@ -1,0 +1,25 @@
+module.exports = {
+  content: ["src/**/*.html"],
+  theme: {
+    colors: {
+      transparent: 'transparent',
+      white: '#ffffff',
+      black: '#222222',
+      blacklesser: '#333333',
+      blue: '#2980b9',
+      bluelighten: '#2c88c5',
+      bluehover: '#236d9e',
+      bluelesser: '#3498db',
+      bluemore: "#124265",
+      bluemoredarken: "#103b5b",
+      bluemorelighten: "#154d76",
+      grey: "#eee",
+      greymore: "#f9f9f9",
+      red: "#c0392b",
+      redlighten: "#cb3c2e",
+      redlesser: "#e74c3c",
+    },
+    extend: {},
+  },
+  plugins: [],
+}

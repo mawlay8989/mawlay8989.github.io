@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahmouni Moulay | Développeur Web Full-Stack</title>
+
+    <link rel="shortcut icon" href="../dist/assets/img/earth-32-289125.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../dist/tailwind.css">
+    <link rel="stylesheet" href="../dist/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+<div class="container bg-black w-full max-w-full py-4">
+    <nav class="bg-transparent shadow max-w-full mx-auto md:px-32">
+		<ul class="flex flex-col md:flex md:flex-row justify-between items-center">
+			<li class="mb-2 md:mb-0">
+				<a href="index.html" class="nav-brand text-center md:text-left sm:block text-white text-lg hover:opacity-90 md:mr-6">
+					Rahmouni Moulay
+				</a>
+			</li>
+
+            <ul class="flex">
+                <li class="mr-2 md:mr-3 md:mb-0">
+                    <a href="https://www.facebook.com/profile.php?id=100055775078523" target="_blank">
+                        <i class="transition duration-200 social-footer-fb cursor-pointer fab text-white text-2xl md:text-2xl fa-facebook-square hover:text-blue"></i>
+                     </a>
+                </li>
+    
+                <li class="mr-2 md:mr-3 md:mb-0">
+                    <a href="#" target="_blank">
+                        <i class="transition duration-200 social-footer-fb cursor-pointer fab text-white text-2xl md:text-2xl fa-twitter-square hover:text-blue"></i>
+                    </a>
+                </li>
+                
+                <li class="md:mb-0">
+                    <a href="https://github.com/mawlay8989" target="_blank">
+                        <i class="transition duration-200 social-footer-fb cursor-pointer fab text-white text-2xl md:text-2xl fa-github-square hover:text-blue"></i>
+                    </a>
+                </li>
+            </ul>
+            
+        </ul>
+        
+    </nav>
+</div>
+
+<section class="hero relative container bg-grey flex flex-col text-white items-center justify-center px-4 md:px-32 mb-20 text-center w-full max-w-full z-50">
+    <div id="overlay"></div>
+    <h1 class="text-2xl md:text-5xl font-bold mb-2">Je suis <span class="text-bluemore">Rahmouni Moulay</span></h1>
+    <h3 class="text-lg md:text-xl text-opacity-75 mb-5">Développeur Web Full-Stack & Expert WordPress</h3>
+    <a href="http://rmoulay.byethost8.com/cv.pdf" class="px-10 py-2 ring-blue/50 focus:ring-4 bg-bluemore font-bold uppercase text-white text-sm md:text-base rounded hover:bg-bluemorelighten transition duration-400" target="_blank">Consulter le CV</a>
+</section>
+
+<section class="about-me container px-4 md:px-80 mb-10 w-full max-w-full">
+    <h2 class="text-3xl md:text-4xl text-bluemore uppercase text-center mb-2">Qui suis-je?</h2>
+    <p class="text-opacity-50 text-black text-center mb-5 md:mb-10">Une petite introduction</p>
+
+    <p class="text-center text-base md:text-lg">Mon nom est <span class="font-bold">Rahmouni Moulay</span>, Je suis un <span class="font-bold">Développeur Web Full-Stack</span> résidant à Oran. Ravi de faire votre connaissance.</p>
+</section>
+
+<section class="skills container px-4 md:px-32 mb-10 w-full max-w-full">
+    <h2 class="text-3xl md:text-4xl text-bluemore uppercase text-center mb-2">Compétences</h2>
+    <p class="text-opacity-50 text-black text-center mb-5">Mes talents dans le monde du Web</p>
+
+    <div class="container mx-auto md:px-16">
+        <div class="flex flex-col md:flex-row mb-10 gap-x-6 items-center justify-center">
+          <div class="flex flex-row md:flex-row gap-x-6 items-center mb-2 justify-center">    
+            <img src="../dist/assets/img/html.png" alt="HTML5">
+            <img src="../dist/assets/img/css.png" alt="CSS3">
+            <img src="../dist/assets/img/javascript.png" alt="JavaScript">
+          </div>
+
+          <div class="flex flex-row md:flex-row gap-x-6 items-center justify-center">   
+            <img src="../dist/assets/img/wordpress.png" alt="WordPress"> 
+            <img src="../dist/assets/img/python.png" alt="Python">
+            <img src="../dist/assets/img/php.png" alt="PHP">
+          </div>
+        </div>
+    </div>
+</section>
+
+<section class="portfolio bg-greymore container px-4 md:px-16 w-full max-w-full pt-10 md:py-10">
+    <h2 class="text-3xl md:text-4xl text-bluemore uppercase text-center mb-2">Mon Portfolio</h2>
+    <p class="text-opacity-50 text-black text-center mb-5">Quelques unes de mes réalisations</p>
+
+    <div class="container mx-auto md:px-16 mb-10">
+        <div id="buttonGroup" class="mb-5 text-center flex flex-col md:flex-row items-center justify-center">
+            <div class="flex md:block">
+                <button class="btn uppercase font-bold text-bluemore text-sm md:text-base px-5 py-2 outline-none hover:text-bluemore focus:outline-none mb-1 mr-1 md:mr-1 border-blue border-b-2 tab-active" data-filter="*">Tous</button>
+
+                <button class="btn uppercase font-bold text-sm md:text-base px-5 py-2 outline-none hover:text-bluemore focus:outline-none mb-1 md:mr-1" data-filter=".websites-cat">Sites Web</button>
+            </div>
+         
+            <div class="flex md:block">
+                <button class="btn uppercase font-bold text-sm md:text-base px-5 py-2 outline-none hover:text-bluemore focus:outline-none mb-1 mr-1 md:mr-1" data-filter=".templates-cat">Templates</button>
+
+                <button class="btn uppercase font-bold text-sm md:text-base px-5 py-2 outline-none hover:text-bluemore focus:outline-none mb-1 md:mr-1" data-filter=".others-cat">Autres</button>
+            </div>
+    </div>
+
+    <div class="cards container flex flex-col flex-wrap md:flex-row overflow-hidden mx-auto">
+        <div class="card websites-cat shadow bg-white overflow-hidden card-width 2xl:w-1/3 rounded border border-black/25">
+            <div class="relative">
+                <a href="https://moumou.pythonanywhere.com">
+                    <img src="../dist/assets/projects/meteorLight50.png" alt="" class="">
+                    <div class="overlay absolute"></div>
+                </a>
+            </div>
+
+            <hr class="border-black/25">
+            
+            <div class="container px-5 py-4">
+                <a href="https://moumou.pythonanywhere.com">
+                    <h3 class="text-black font-bold text-base 2xl:text-lg hover:underline dark:text-white">MeteorLight</h3>
+                </a>
+                    
+                <p class="text-bluemore text-xs font-bold mb-3">Django</p>
+                <p class="text-black text-sm 2xl:text-base dark:text-white">
+                    Site web de <strong>cours de programmation</strong> et d'Informatique pour les grands débutants.
+                </p>
+            </div>
+        </div>
+
+        <div class="card templates-cat bg-white shadow  overflow-hidden card-width 2xl:w-1/3 rounded border border-black/25">
+            <div class="relative">
+                <a href="http://rmoulay.byethost8.com/landing1/index.html">
+                    <img src="../dist/assets/projects/nano50.png" alt="Nano Template" class="">
+                    <div class="overlay absolute"></div>
+                </a>
+            </div>
+
+            <hr class="border-black/25">
+            
+            <div class="container px-5 py-4">
+                <a href="http://rmoulay.byethost8.com/landing1/index.html">
+                    <h3 class="text-black font-bold text-base 2xl:text-lg hover:underline dark:text-white">Nano Landing Page</h3>
+                </a>
+                    
+                <p class="text-bluemore text-xs font-bold mb-3">TailwindCSS</p>
+                <p class="text-black text-sm 2xl:text-base dark:text-white">
+                    Une Landing Page soignée pour la promotion d'une Application, qu'elle soit Desktop ou Web.
+                </p>
+            </div>
+        </div>
+
+        <div class="card websites-cat bg-white shadow  overflow-hidden card-width 2xl:w-1/3 rounded border border-black/25">
+            <div class="relative">
+                <a href="https://rocketbootstrap.herokuapp.com/">
+                    <img src="../dist/assets/projects/rocketbootstrap50.png" alt="" class="">
+                    <div class="overlay absolute"></div>
+                </a>
+            </div>
+
+            <hr class="border-black/25">
+            
+            <div class="container px-5 py-4">
+                <a href="https://rocketbootstrap.herokuapp.com/">
+                    <h3 class="text-black font-bold text-base 2xl:text-lg hover:underline dark:text-white">RocketBootstrap</h3>
+                </a>
+                    
+                <p class="text-bluemore text-xs font-bold mb-3">Ruby on Rails</p>
+                <p class="text-black text-sm 2xl:text-base dark:text-white">
+                    Mon site web concernant des tutoriaux vidéos pour la création de <strong>Thèmes WordPress</strong>.
+                </p>
+            </div>
+        </div>
+
+        <div class="card templates-cat bg-white shadow  overflow-hidden card-width 2xl:w-1/3 rounded border border-black/25">
+            <div class="relative">
+                <a href="http://rmoulay.byethost8.com/hotel/index.html">
+                    <img src="../dist/assets/projects/hotel50.png" alt="" class="">
+                    <div class="overlay absolute"></div>
+                </a>
+            </div>
+
+            <hr class="border-black/25">
+            
+            <div class="container px-5 py-4">
+                <a href="http://rmoulay.byethost8.com/hotel/index.html">
+                    <h3 class="text-black font-bold text-base 2xl:text-lg hover:underline dark:text-white">Hôtel Oran</h3>
+                </a>
+                    
+                <p class="text-bluemore text-xs font-bold mb-3">Bootstrap</p>
+                <p class="text-black text-sm 2xl:text-base dark:text-white">
+                    Une template HTML créee avec Bootstrap qui <strong>sied parfaitement</strong> à une compagnie d'Hôtel.
+                </p>
+            </div>
+        </div>
+
+        <div class="card others-cat bg-white shadow  overflow-hidden card-width 2xl:w-1/3 rounded border border-black/25">
+            <div class="relative">
+                <a href="https://djangorahm.herokuapp.com/">
+                    <img src="../dist/assets/projects/dj50.png" alt="Django" class="">
+                    <div class="overlay absolute"></div>
+                </a>
+            </div>
+
+            <hr class="border-black/25">
+            
+            <div class="container px-5 py-4">
+                <a href="https://djangorahm.herokuapp.com/">
+                    <h3 class="text-black font-bold text-base 2xl:text-lg hover:underline dark:text-white">Django Journal Intime</h3>
+                </a>
+                    
+                <p class="text-bluemore text-xs font-bold mb-3">Django</p>
+                <p class="text-black text-sm 2xl:text-base dark:text-white">
+                    Une démonstration d'une Web App de Journal Intime crée à l'aide du Framework Web Python Django.
+                </p>
+            </div>
+        </div>
+
+        <div class="card others-cat bg-white shadow  overflow-hidden card-width 2xl:w-1/3 rounded border border-black/25">
+            <div class="relative">
+                <a href="http://vuejs-moulay.atwebpages.com/">
+                    <img src="../dist/assets/projects/vue50.png" alt="Vue.js" class="">
+                    <div class="overlay absolute"></div>
+                </a>
+            </div>
+
+            <hr class="border-black/25">
+            
+            <div class="container px-5 py-4">
+                <a href="http://vuejs-moulay.atwebpages.com/">
+                    <h3 class="text-black font-bold text-base 2xl:text-lg hover:underline dark:text-white">Applications Vue.js</h3>
+                </a>
+                    
+                <p class="text-bluemore text-xs font-bold mb-3">Django</p>
+                <p class="text-black text-sm 2xl:text-base dark:text-white">
+                    Diverses Applications Vue.js pour un Front-End moderne, quelques démonstrations simples.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="contact bg-blacklesser text-white container px-4 md:px-16 w-full max-w-full pb-10 pt-10 mx-auto">
+    <h2 class="text-3xl md:text-4xl text-white uppercase text-center mb-2">Vous avez un projet?</h2>
+    <p class="text-opacity-50 text-white text-center mb-10">Concrétisez vos idées</p>
+    <div class="text-center">
+        <a href="" class="px-10 py-3 ring-red/50 focus:ring-4 bg-red font-bold uppercase text-white text-center text-base md:text-xl rounded hover:bg-redlighten transition duration-400">Me Contacter</a>
+    </div>
+    
+</section>
+
+
+
+<footer class="bg-black px-4 md:px-24 py-4 md:py-6 flex items-center justify-between w-full max-w-full">
+    <a href="index.html" class="text-white text-sm md:text-lg hover:opacity-90">
+        Rahmouni Moulay
+    </a>
+
+    <ul class="flex">
+        <li>
+            <a href="https://www.facebook.com/profile.php?id=100055775078523" target="_blank">
+                <i class="transition duration-200 social-footer-fb cursor-pointer mr-3 fab text-white text-xl md:text-3xl fa-facebook-square hover:text-blue"></i>
+            </a>
+        </li>
+        
+        <li>
+            <a href="#" target="_blank">
+                <i class="transition duration-200 social-footer-fb cursor-pointer mr-3 fab text-white text-xl md:text-3xl fa-twitter-square hover:text-blue"></i>
+            </a>
+        </li>
+        
+        <li>
+            <a href="https://github.com/mawlay8989" target="_blank">
+                <i class="transition duration-200 social-footer-fb cursor-pointer fab text-white text-xl md:text-3xl fa-github-square hover:text-blue"></i>
+            </a>
+        </li>
+    </ul>
+</footer>
+
+<a href="javascript:" id="fab" class="text-white bg-blacklesser">
+    <i class="fas fa-chevron-up"></i>
+</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script src="https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
+
+<script>
+    $( document ).ready(function() {
+        $(window).scroll(function() {
+            if($(this).scrollTop() >= 200) {
+                $('#fab').fadeIn(200);
+            }
+            else {
+                $('#fab').fadeOut(200);
+            }
+        });
+
+        $('#fab').click(function() {
+            $('html, body').animate({
+                scrollTop : 0 }, 800
+            )
+        });
+
+        $('.cards').imagesLoaded( function() {
+            $('.cards').isotope({
+            // options
+            itemSelector: '.card',
+            percentPosition: true,
+            layoutMode: 'masonry',
+            masonry: {
+                gutter: 16
+            },
+        });
+
+        //$('.cards').isotope({ filter: "*" });
+    });
+        
+    });
+            
+    
+    
+    $('#buttonGroup').on( 'click', 'button', function() {
+        var filterValue = $(this).attr('data-filter');
+        $('.cards').isotope({ filter: filterValue });
+        });
+    
+    //$grid.isotope('reloadItems');
+        
+    
+</script>
+
+</body>
+</html>

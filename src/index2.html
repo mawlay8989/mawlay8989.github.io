@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahmouni Moulay | Full-Stack Web Developer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../dist/tailwind.css">
+    <link rel="stylesheet" href="../dist/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+<div class="container bg-black w-full max-w-full py-4">
+    <nav class="bg-transparent shadow max-w-full mx-auto md:px-32">
+		<ul class="flex flex-col md:flex md:flex-row justify-between items-center">
+			<li class="mb-2 md:mb-0">
+				<a href="{% url 'home-view' %}" class="nav-brand text-center md:text-left sm:block text-white text-lg hover:opacity-90 md:mr-6">
+					Rahmouni Moulay
+				</a>
+			</li>
+
+            <ul class="flex">
+                <li class="mr-2 md:mr-3 md:mb-0">
+                    <a href="https://www.facebook.com/profile.php?id=100055775078523" target="_blank">
+                        <i class="transition duration-200 social-footer-fb cursor-pointer fab text-white text-2xl md:text-2xl fa-facebook-square hover:text-blue"></i>
+                     </a>
+                </li>
+    
+                <li class="mr-2 md:mr-3 md:mb-0">
+                    <a href="https://www.facebook.com/profile.php?id=100055775078523" target="_blank">
+                        <i class="transition duration-200 social-footer-fb cursor-pointer fab text-white text-2xl md:text-2xl fa-twitter-square hover:text-blue"></i>
+                    </a>
+                </li>
+                
+                <li class="md:mb-0">
+                    <a href="https://www.facebook.com/profile.php?id=100055775078523" target="_blank">
+                        <i class="transition duration-200 social-footer-fb cursor-pointer fab text-white text-2xl md:text-2xl fa-github-square hover:text-blue"></i>
+                    </a>
+                </li>
+            </ul>
+            
+        </ul>
+        
+    </nav>
+</div>
+
+<section class="hero relative container bg-grey flex flex-col text-white items-center justify-center px-4 md:px-32 mb-20 text-center w-full max-w-full z-50">
+    <div id="overlay"></div>
+    <h1 class="text-2xl md:text-5xl font-bold mb-2">I Am <span class="text-bluemore">Rahmouni Moulay</span></h1>
+    <h3 class="text-lg md:text-xl text-opacity-75 mb-5">Full-Stack Web Developer & WordPress Specialist</h3>
+    <a href="" class="px-10 py-2 ring-blue/50 focus:ring-4 bg-bluemore font-bold uppercase text-white text-sm md:text-base rounded hover:bg-bluemorelighten transition duration-400">View CV</a>
+</section>
+
+<section class="about-me container px-4 md:px-96 mb-10 w-full max-w-full">
+    <h2 class="text-3xl md:text-4xl text-bluemore uppercase text-center mb-2">About Me</h2>
+    <p class="text-opacity-50 text-black text-center mb-5 md:mb-10">Introducing Myself</p>
+
+    <p class="text-center text-base md:text-lg">My name is <span class="font-bold">Rahmouni Moulay</span>, I am a <span class="font-bold">Full-Stack Web Developer</span> from Algeria, Oran. Nice to meet you.</p>
+</section>
+
+<section class="skills container px-4 md:px-32 mb-10 w-full max-w-full">
+    <h2 class="text-3xl md:text-4xl text-bluemore uppercase text-center mb-2">Skills</h2>
+    <p class="text-opacity-50 text-black text-center mb-5">My talents in the Web world</p>
+
+    <div class="container mx-auto md:px-16">
+        <div class="flex flex-col md:flex-row mb-10 gap-x-6 items-center justify-center">
+          <div class="flex flex-row md:flex-row gap-x-6 items-center mb-2 justify-center">    
+            <img src="../dist/assets/img/html.png" alt="HTML5">
+            <img src="../dist/assets/img/css.png" alt="CSS3">
+            <img src="../dist/assets/img/javascript.png" alt="JavaScript">
+          </div>
+
+          <div class="flex flex-row md:flex-row gap-x-6 items-center justify-center">   
+            <img src="../dist/assets/img/wordpress.png" alt="WordPress"> 
+            <img src="../dist/assets/img/python.png" alt="Python">
+            <img src="../dist/assets/img/php.png" alt="PHP">
+          </div>
+        </div>
+    </div>
+</section>
+
+<section class="portfolio bg-greymore container px-4 md:px-16 w-full max-w-full py-10">
+    <h2 class="text-3xl md:text-4xl text-bluemore uppercase text-center mb-2">Portfolio</h2>
+    <p class="text-opacity-50 text-black text-center mb-5">Some Projects I have made</p>
+
+    <div class="container mx-auto md:px-16 mb-10">
+        <div id="buttonGroup" class="mb-5 text-center flex flex-col md:flex-row items-center justify-center">
+            <div class="flex md:block">
+                <button class="btn uppercase font-bold text-bluemore text-sm md:text-base px-5 py-2 outline-none hover:text-bluemore focus:outline-none mb-1 mr-1 md:mr-1 border-blue border-b-2 tab-active" data-filter="*"> All Projects</button>
+
+                <button class="btn uppercase font-bold text-sm md:text-base px-5 py-2 outline-none hover:text-bluemore focus:outline-none mb-1 md:mr-1" data-filter=".card1"> Websites</button>
+            </div>
+         
+            <div class="flex md:block">
+                <button class="btn uppercase font-bold text-sm md:text-base px-5 py-2 outline-none hover:text-bluemore focus:outline-none mb-1 mr-1 md:mr-1" data-filter=".card2"> Templates</button>
+
+                <button class="btn uppercase font-bold text-sm md:text-base px-5 py-2 outline-none hover:text-bluemore focus:outline-none mb-1 md:mr-1" data-filter=".card3"> Others</button>
+            </div>
+    </div>
+
+    <div class="cards grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-6">
+        <div class="card card1 shadow bg-white rounded border border-black/25">
+            <div class="relative">
+                <a href="kabouya">
+                    <img src="../dist/assets/projects/meteorLight50.png" alt="" class="">
+                    <div class="overlay absolute"></div>
+                </a>
+            </div>
+
+            <hr class="border-black/25">
+            
+            <div class="container px-5 py-4">
+                <a href="{% url 'course-summary-view' course.category.slug course.slug %}">
+                    <h3 class="text-black font-bold text-base 2xl:text-lg hover:underline dark:text-white">MeteorLight</h3>
+                </a>
+                    
+                <p class="text-bluemore text-xs font-bold mb-3">Django</p>
+                <p class="text-black text-sm 2xl:text-base dark:text-white">
+                    Programming Tutorials Website for complete beginners.
+                </p>
+            </div>
+        </div>
+
+        <div class="card card2 bg-white shadow rounded border border-black/25">
+            <div class="relative">
+                <a href="kabouya">
+                    <img src="../dist/assets/projects/rocketbootstrap50.png" alt="" class="">
+                    <div class="overlay absolute"></div>
+                </a>
+            </div>
+
+            <hr class="border-black/25">
+            
+            <div class="container px-5 py-4">
+                <a href="{% url 'course-summary-view' course.category.slug course.slug %}">
+                    <h3 class="text-black font-bold text-base 2xl:text-lg hover:underline dark:text-white">MeteorLight</h3>
+                </a>
+                    
+                <p class="text-bluemore text-xs font-bold mb-3">Django</p>
+                <p class="text-black text-sm 2xl:text-base dark:text-white">
+                    Programming Tutorials Website for complete beginners.
+                </p>
+            </div>
+        </div>
+
+        <div class="card card3 bg-white shadow rounded border border-black/25">
+            <div class="relative">
+                <a href="kabouya">
+                    <img src="../dist/assets/projects/meteorLight50.png" alt="" class="">
+                    <div class="overlay absolute"></div>
+                </a>
+            </div>
+
+            <hr class="border-black/25">
+            
+            <div class="container px-5 py-4">
+                <a href="{% url 'course-summary-view' course.category.slug course.slug %}">
+                    <h3 class="text-black font-bold text-base 2xl:text-lg hover:underline dark:text-white">MeteorLight</h3>
+                </a>
+                    
+                <p class="text-bluemore text-xs font-bold mb-3">Django</p>
+                <p class="text-black text-sm 2xl:text-base dark:text-white">
+                    Programming Tutorials Website for complete beginners.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<!--
+<div class="px-8 md:px-48">
+    <hr class="border-blacklesser">
+</div>
+-->
+
+<section class="contact bg-white container px-4 md:px-16 mb-10 w-full max-w-full py-10 mx-auto">
+    <h2 class="text-3xl md:text-4xl text-bluemore uppercase text-center mb-2">Have an Idea?</h2>
+    <p class="text-opacity-50 text-black text-center mb-10">Make your App a reality</p>
+    <div class="text-center">
+        <a href="" class="px-10 py-3 ring-red/50 focus:ring-4 bg-red font-bold uppercase text-white text-center text-base md:text-xl rounded hover:bg-redlighten transition duration-400">Contact Me</a>
+    </div>
+    
+</section>
+
+
+
+<footer class="bg-black px-4 md:px-24 py-4 md:py-6 flex items-center justify-between w-full max-w-full">
+    <a href="{% url 'home-view' %}" class="text-white text-sm md:text-lg hover:opacity-90">
+        Rahmouni Moulay
+    </a>
+
+    <ul class="flex">
+        <li>
+            <a href="https://www.facebook.com/profile.php?id=100055775078523" target="_blank">
+                <i class="transition duration-200 social-footer-fb cursor-pointer mr-3 fab text-white text-xl md:text-3xl fa-facebook-square hover:text-blue"></i>
+            </a>
+        </li>
+        
+        <li>
+            <a href="https://www.facebook.com/profile.php?id=100055775078523" target="_blank">
+                <i class="transition duration-200 social-footer-fb cursor-pointer mr-3 fab text-white text-xl md:text-3xl fa-twitter-square hover:text-blue"></i>
+            </a>
+        </li>
+        
+        <li>
+            <a href="https://www.facebook.com/profile.php?id=100055775078523" target="_blank">
+                <i class="transition duration-200 social-footer-fb cursor-pointer fab text-white text-xl md:text-3xl fa-github-square hover:text-blue"></i>
+            </a>
+        </li>
+    </ul>
+</footer>
+
+<a href="javascript:" id="fab" class="text-white bg-blacklesser">
+    <i class="fas fa-chevron-up"></i>
+</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script src="https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
+
+<script>
+    $( document ).ready(function() {
+        $(window).scroll(function() {
+            if($(this).scrollTop() >= 200) {
+                $('#fab').fadeIn(200);
+            }
+            else {
+                $('#fab').fadeOut(200);
+            }
+        });
+
+        $('#fab').click(function() {
+            $('html, body').animate({
+                scrollTop : 0 }, 800
+            )
+        });
+
+        $('.cards').imagesLoaded( function() {
+            $('.cards').isotope({
+            // options
+            itemSelector: '.card',
+            percentPosition: true,
+            layoutMode: 'fitRows',
+        });
+
+        $('.cards').isotope({ filter: "card1" });
+    });
+        
+
+            
+    });
+    
+    $('#buttonGroup').on( 'click', 'button', function() {
+        var filterValue = $(this).attr('data-filter');
+        $('.cards').isotope({ filter: filterValue });
+        });
+    
+    //$grid.isotope('reloadItems');
+        
+    
+</script>
+
+</body>
+</html>
