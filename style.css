@@ -4,10 +4,48 @@ body {
 }
 
 .hero {
-  /*background-image: url('assets/img/splash.jpg');
+  background-image: url("assets/img/splash.jpg");
   background-size: cover;
+  height: 26rem;
+  max-height: 26rem;
+  box-shadow: inset 0 0 99999px rgba(0, 0, 0, 0.2);
+}
+.hero .text-shadow {
+  text-shadow: 2px 2px 4px #333;
+}
 
-  box-shadow: inset 0 0 99999px rgba(0, 0, 0, 0.2);*/
+.card-width {
+  width: 49%;
+  margin-bottom: 1rem;
+}
+@media (max-width: 768px) {
+  .card-width {
+    width: 100%;
+  }
+}
+@media (min-width: 1500px) {
+  .card-width {
+    width: 32%;
+  }
+}
+
+#overlay {
+  position: absolute;
+  /* Sit on top of the page content */
+  width: 100%;
+  /* Full width (cover the whole page) */
+  height: 100%;
+  /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  /* Black background with opacity */
+  z-index: -1;
+  /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer;
+  /* Add a pointer on hover */
 }
 
 .overlay {
@@ -31,7 +69,6 @@ body {
   width: 36px;
   height: 36px;
   border-radius: 5px;
-  opacity: 0;
   text-align: center;
   z-index: 9999;
   -webkit-tap-highlight-color: transparent;
