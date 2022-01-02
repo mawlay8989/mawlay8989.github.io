@@ -66,6 +66,7 @@ body {
   position: fixed;
   right: 30px;
   bottom: 30px;
+  display: none;
   width: 36px;
   height: 36px;
   border-radius: 5px;
