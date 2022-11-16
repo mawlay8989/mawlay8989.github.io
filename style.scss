@@ -21,6 +21,23 @@ body
 	}
 }
 
+.hero2
+{
+	//border-bottom-left-radius: 12%; border-bottom-right-radius: 12%;
+	background-image: url('assets/img/splash.jpg');
+	background-size: cover;
+
+	height: 20rem;
+	max-height: 20rem;
+
+	box-shadow: inset 0 0 99999px rgba(0, 0, 0, 0.2);
+
+	.text-shadow
+	{
+		text-shadow: 2px 2px 4px #333;
+	}
+}
+
 .card-width
 {
 	width: 49%;
