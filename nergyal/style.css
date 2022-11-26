@@ -1,0 +1,83 @@
+body {
+  color: #111;
+}
+
+.font-anton {
+  font-family: "Anton", Arial;
+}
+
+.main-header {
+  height: 100vh;
+  background-image: url("images/hero.jpg");
+  background-size: cover;
+  z-index: 5;
+  position: relative;
+}
+
+.main-header:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+
+.give-us-call {
+  position: relative;
+  z-index: 10;
+  margin-top: -9rem;
+}
+.give-us-call .guc-title {
+  letter-spacing: 0.25rem;
+}
+
+.bg-fixed {
+  height: 20rem;
+  background-image: url("images/services.jpg");
+  background-size: cover;
+  z-index: 5;
+  position: relative;
+}
+
+.bg-fixed:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: -1;
+}
+
+.section-title {
+  position: relative;
+}
+
+.section-subtitle {
+  position: relative;
+  letter-spacing: 0.5rem;
+}
+
+.section-subtitle::after {
+  content: "";
+  width: 8%;
+  height: 2px;
+  background: #0077BB;
+  position: absolute;
+  top: 200%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.our-services .service:hover {
+  cursor: pointer;
+}
+.our-services .service:hover i, .our-services .service:hover p {
+  color: white;
+}
+
+/*# sourceMappingURL=style.css.map */
