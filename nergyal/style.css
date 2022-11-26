@@ -25,6 +25,13 @@ body {
   z-index: -1;
 }
 
+.hero .center-enter {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .give-us-call {
   position: relative;
   z-index: 10;
