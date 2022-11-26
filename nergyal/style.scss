@@ -11,6 +11,7 @@ body
 .main-header
 {
     height: 100vh;
+    min-height: 100%;
     background-image: url('images/hero.jpg');
     background-size: cover;
     
@@ -40,9 +41,19 @@ body
         position: absolute;
 
         top: 45%;  
-    left: 50%;
+        left: 50%;
 
-    transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    .center-arrow
+    {
+        position: absolute;
+
+        top: 58%;  
+        left: 50%;
+
+        transform: translate(-50%, -50%);
     }
     
 }
@@ -124,3 +135,21 @@ body
         color: white;
     }
 }
+
+@keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+    100% {
+        transform: translateY(0);
+      }
+  }
+
+  .bounce {
+    -moz-animation: bounce 3s infinite;
+    -webkit-animation: bounce 3s infinite;
+    animation: bounce 3s infinite;
+  }

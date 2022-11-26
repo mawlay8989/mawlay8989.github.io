@@ -8,6 +8,7 @@ body {
 
 .main-header {
   height: 100vh;
+  min-height: 100%;
   background-image: url("images/hero.jpg");
   background-size: cover;
   z-index: 5;
@@ -28,6 +29,12 @@ body {
 .hero .center-enter {
   position: absolute;
   top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.hero .center-arrow {
+  position: absolute;
+  top: 58%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -94,6 +101,23 @@ body {
 }
 .our-services .service:hover i, .our-services .service:hover p {
   color: white;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.bounce {
+  -moz-animation: bounce 3s infinite;
+  -webkit-animation: bounce 3s infinite;
+  animation: bounce 3s infinite;
 }
 
 /*# sourceMappingURL=style.css.map */
