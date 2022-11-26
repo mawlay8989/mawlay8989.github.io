@@ -64,6 +64,11 @@ body
     position: relative;
 }
 
+::selection {
+    color: white;
+    background: #0077BB;
+  }
+
 .bg-fixed:before {
     content: "";
     position: absolute;
