@@ -137,11 +137,7 @@ body {
   text-align: center;
   z-index: 9999;
   -webkit-tap-highlight-color: transparent;
-  transition: opacity 1s;
-}
-
-#fab:hover {
-  opacity: 1;
+  transition: opacity 2s;
 }
 
 #fab i {
@@ -149,7 +145,7 @@ body {
   position: relative;
   left: 0;
   top: 4px;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 #fab.fab-fadein {
