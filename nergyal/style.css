@@ -112,16 +112,16 @@ body {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-8px);
+    transform: translateY(-12px);
   }
   100% {
     transform: translateY(0);
   }
 }
 .bounce {
-  -moz-animation: bounce 3s infinite;
-  -webkit-animation: bounce 3s infinite;
-  animation: bounce 3s infinite;
+  -moz-animation: bounce 2.5s infinite;
+  -webkit-animation: bounce 2.5s infinite;
+  animation: bounce 2.5s infinite;
 }
 
 /*# sourceMappingURL=style.css.map */
