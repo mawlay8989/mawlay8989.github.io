@@ -9,8 +9,8 @@ header, footer {
 
 .hero {
   background-color: #EEF3F9;
-  border-bottom-left-radius: 20%;
-  border-bottom-right-radius: 20%;
+  border-bottom-left-radius: 18%;
+  border-bottom-right-radius: 18%;
 }
 @media (max-width: 768px) {
   .hero {
