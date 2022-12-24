@@ -12,6 +12,12 @@ header, footer {
   border-bottom-left-radius: 20%;
   border-bottom-right-radius: 20%;
 }
+@media (max-width: 768px) {
+  .hero {
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+  }
+}
 .hero .btn:hover {
   transform: translateY(-2px);
 }
