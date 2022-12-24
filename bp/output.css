@@ -1164,6 +1164,11 @@ video {
   transition-duration: 300ms;
 }
 
+.hover\:border-primary-700:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(41 128 185 / var(--tw-border-opacity));
+}
+
 .hover\:bg-primary-800:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(31 96 139 / var(--tw-bg-opacity));
