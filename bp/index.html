@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breath Partner</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="border-gray-200 px-4 lg:px-6 py-2.5 mt-0 lg:pt-8">
+            <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+                <a href="https://breathpartner.net" class="flex items-center">
+                    <img src="images/logobp.png" class="mr-3 h-6 sm:h-6" alt="Breath Partner Logo" />
+                </a>
+                <div class="flex items-center lg:order-2">
+                    <a href="#" class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded text-sm px-4 lg:px-6 py-2 lg:py-2.5 mr-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800 transition duration-200 font-semibold">Nous Contacter</a>
+                    <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                        <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </button>
+                </div>
+                <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
+                    <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 font-medium">
+                        <li>
+                            <a href="#" class="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 transition duration-200 dark:text-white" aria-current="page">Home</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 transition duration-200 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">À Propos</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 transition duration-200 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Valeurs</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 transition duration-200 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Activités</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 transition duration-200 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Réalisations</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 transition duration-200 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Vision</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 transition duration-200 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Équipe</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero dark:bg-gray-900">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:pb-20 lg:px-12">
+            <a href="#" class="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" role="alert">
+                <span class="text-xs bg-primary-700 rounded-full text-white px-4 py-1.5 mr-3">Nouveau</span> <span class="text-sm font-medium">Information Nouvelle Exemple</span> 
+                <svg class="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+            </a>
+                <h1 class="mb-6 text-4xl font-black tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Technology <span class="text-primary-700">Solutions</span></h1>
+           
+            <p class="mb-8 text-base font-normal text-gray-400 lg:text-lg sm:px-16 xl:px-48 dark:text-gray-400 tracking-wider">Nous sommes <span class="text-primary-700 font-bold">Breath Partner</span> : La <span class="font-semibold">Solution</span> qui vous convient</p>
+
+            <div class="flex flex-col mb-4 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+                <a href="#" class="btn inline-flex justify-center items-center py-2.5 px-9 text-sm font-medium text-center text-white rounded bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900 font-semibold transition duration-200 opacity-90 hover:opacity-100">
+                    Services
+                </a>
+                <a href="#" class="btn inline-flex justify-center items-center bg-white py-2.5 px-9 text-sm font-medium text-center text-gray-900 rounded border border-gray-300 hover:bg-gray-200 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 font-semibold transition duration-200 opacity-90 hover:opacity-100">
+                    Notre Travail
+                </a>  
+            </div> 
+        </div>
+    </section>
+
+    <section class="dashboard -mt-2 lg:-mt-24 mb-12">
+        <div class="container mx-auto dashboard-img">
+            <img src="images/dashboard.png" alt="" class="block mx-auto">
+        </div>
+    </section>
+
+    <section id="counterDiv" class="compteurs mb-10">
+        <div class="flex flex-col lg:flex-row justify-start lg:justify-center items-start lg:items-center px-16 lg:px-0 gap-8 lg:gap-24">
+            <div class="flex gap-10 justify-center items-center">
+                <i class="fa-regular text-3xl fa-image text-primary-700"></i>
+                <div class="flex flex-col">
+                    <span class="text-xl lg:text-2xl font-black text-primary-900 counter">+ 150</span>
+                    <span class="text-gray-400 tracking-wider">Partenaires Annuels</span>
+                </div>
+            </div>
+
+            <div class="flex gap-10 justify-center items-center">
+                <i class="fa-regular text-3xl fa-floppy-disk text-primary-700"></i>
+                <div class="flex flex-col">
+                    <span class="text-xl lg:text-2xl font-black text-primary-900 counter">+ 27</span>
+                    <span class="text-gray-400 tracking-wider">Projets Terminés</span>
+                </div>
+            </div>
+
+            <div class="flex gap-10 justify-center items-center">
+                <i class="fa-regular text-3xl fa-newspaper text-primary-700"></i>
+                <div class="flex flex-col">
+                    <span class="text-xl lg:text-2xl font-black text-primary-900 counter">+ 500</span>
+                    <span class="text-gray-400 tracking-wider">Clients Satisfaits</span>
+                </div>
+            </div>
+
+            <div class="flex gap-10 justify-center items-center">
+                <i class="fa-regular text-3xl fa-chess-queen text-primary-700"></i>
+                <div class="flex flex-col">
+                    <span class="text-xl lg:text-2xl font-black text-primary-900 counter">+ 32</span>
+                    <span class="text-gray-400 tracking-wider">Travaux Scientifiques</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="a-propos bg-white dark:bg-gray-900">
+        <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+            <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                <span class="bg-primary-200 text-xs font-semibold rounded-xl py-1 px-3 text-primary-800 mb-5 inline-block">À Propos</span>
+
+                <h2 class="mb-5 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-800 dark:text-white">Qui sommes nous?</h2>
+                <p class="mb-4">Breath Partner est une jeune entreprise crée en Mars 2019 suite à des besoins constatés sur le marché Algérien mais aussi Africain. Elle est née d'une véritable passion pour les nouvelles technologies. Aujourd’hui nous sommes fiers et sûrs de nos capacités à se placer parmi les leaders de ce domaine dans un futur proche.</p>
+                <p>C’est parce que nous croyons vraiment à nos capacités et à nos talents que nous avons pu créer une équipe capable de satisfaire les besoins des clients et de s’adapter facilement aux changements du marché.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-4 mt-8">
+                <img class="w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png" alt="office content 1">
+                <img class="mt-4 w-full lg:mt-10 rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png" alt="office content 2">
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white dark:bg-gray-900">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+            <div class="max-w-screen-md mb-8 lg:mb-16">
+                <span class="bg-primary-200 text-xs font-semibold rounded-xl py-1 px-3 text-primary-800 mb-5 inline-block">Nos Valeurs</span>
+
+                <h2 class="mb-4 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Notre Code d'Éthique</h2>
+                <p class="text-gray-500 sm:text-xl dark:text-gray-400">Nous sommes guidés par notre vision d’entreprise et nos valeurs d’honnêteté et d’intégrité sans compromis.</p>
+            </div>
+            <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
+                <div class="flex flex-col justify-center items-center text-center">
+                    <div class="flex justify-center items-center mb-4 w-12 h-12 rounded-full bg-primary-100 lg:h-16 lg:w-16 dark:bg-primary-900">
+                        <i class="fa-solid fa-handshake text-xl lg:text-2xl text-primary-700"></i>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold dark:text-white">Confiance</h3>
+                    <p class="text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nesciunt necessitatibus tempora ab porro laudantium?</p>
+                </div>
+                <div class="flex flex-col justify-center items-center text-center">
+                    <div class="flex justify-center items-center mb-4 w-12 h-12 rounded-full bg-primary-100 lg:h-16 lg:w-16 dark:bg-primary-900">
+                        <i class="fa-solid fa-lightbulb text-xl lg:text-2xl text-primary-700"></i>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold dark:text-white">Qualité</h3>
+                    <p class="text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nesciunt necessitatibus tempora ab porro laudantium?</p>
+                </div>
+                <div class="flex flex-col justify-center items-center text-center">
+                    <div class="flex justify-center items-center mb-4 w-12 h-12 rounded-full bg-primary-100 lg:h-16 lg:w-16 dark:bg-primary-900">
+                        <i class="fa-solid fa-laptop-file text-xl lg:text-2xl text-primary-700"></i>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold dark:text-white">Savoir Faire</h3>
+                    <p class="text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nesciunt necessitatibus tempora ab porro laudantium?</p>
+                </div>
+                <div class="flex flex-col justify-center items-center text-center">
+                    <div class="flex justify-center items-center mb-4 w-12 h-12 rounded-full bg-primary-100 lg:h-16 lg:w-16 dark:bg-primary-900">
+                        <i class="fa-solid fa-user text-xl lg:text-2xl text-primary-700"></i>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold dark:text-white">Disponibilité</h3>
+                    <p class="text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nesciunt necessitatibus tempora ab porro laudantium?</p>
+                </div>
+                <div class="flex flex-col justify-center items-center text-center">
+                    <div class="flex justify-center items-center mb-4 w-12 h-12 rounded-full bg-primary-100 lg:h-16 lg:w-16 dark:bg-primary-900">
+                        <i class="fa-solid fa-briefcase text-xl lg:text-2xl text-primary-700"></i>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold dark:text-white">Responsabilité</h3>
+                    <p class="text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nesciunt necessitatibus tempora ab porro laudantium?</p>
+                </div>
+                <div class="flex flex-col justify-center items-center text-center">
+                    <div class="flex justify-center items-center mb-4 w-12 h-12 rounded-full bg-primary-100 lg:h-16 lg:w-16 dark:bg-primary-900">
+                        <i class="fa-solid fa-ear-listen text-xl lg:text-2xl text-primary-700"></i>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold dark:text-white">Écoute</h3>
+                    <p class="text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nesciunt necessitatibus tempora ab porro laudantium?</p>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <section class="bg-white dark:bg-gray-900">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+            <div class="mb-8 lg:mb-16">
+                <span class="bg-primary-200 text-xs font-semibold rounded-xl py-1 px-3 text-primary-800 mb-5 inline-block">Nos Activités</span>
+
+                <h2 class="mb-4 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Nos Domaines d'Activités</h2>
+                <p class="text-gray-500 sm:text-xl dark:text-gray-400 mb-10">Nous opérons dans divers domaines pointus.</p>
+
+                <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                    <div class="p-6 py-10 shadow flex flex-col items-center justify-center text-center hover:shadow-lg transition duration-200 cursor-pointer border">
+                        <i class="fa-solid fa-briefcase text-xl lg:text-2xl text-primary-700 mb-1"></i>
+                        <h3 class="mb-2 text-lg font-bold dark:text-white mb-3">Développement Web</h3>
+                        <p class="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, provident?</p>
+                    </div>
+
+                    <div class="p-6 py-10 shadow flex flex-col items-center justify-center text-center hover:shadow-lg transition duration-200 cursor-pointer border">
+                        <i class="fa-solid fa-tablet-screen-button text-xl lg:text-2xl text-primary-700 mb-1"></i>
+                        <h3 class="mb-2 text-lg font-bold dark:text-white mb-3">Développement Mobile</h3>
+                        <p class="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, provident?</p>
+                    </div>
+
+                    <div class="p-6 py-10 shadow flex flex-col items-center justify-center text-center hover:shadow-lg transition duration-200 cursor-pointer border">
+                        <i class="fa-solid fa-signal text-xl lg:text-2xl text-primary-700 mb-1"></i>
+                        <h3 class="mb-2 text-lg font-bold dark:text-white mb-3">Télécommunications</h3>
+                        <p class="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, provident?</p>
+                    </div>
+
+                    <div class="p-6 py-10 shadow flex flex-col items-center justify-center text-center hover:shadow-lg transition duration-200 cursor-pointer border">
+                        <i class="fa-solid fa-video text-xl lg:text-2xl text-primary-700 mb-1"></i>
+                        <h3 class="mb-2 text-lg font-bold dark:text-white mb-3">Vidéo Surveillance</h3>
+                        <p class="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, provident?</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <section class="bg-white dark:bg-gray-900">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+            <div class="max-w-screen-md mb-8 lg:mb-16">
+                <span class="bg-primary-200 text-xs font-semibold rounded-xl py-1 px-3 text-primary-800 mb-5 inline-block">Nos Projets</span>
+
+                <h2 class="mb-4 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Nos Réalisations</h2>
+                <p class="text-gray-500 sm:text-xl dark:text-gray-400">Découvrez nos derniers projets.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-6">
+                <div>
+                    <img src="images/img-10.jpg" alt="Portfolio Image" class="rounded transition duration-300 portfolio-img">
+                </div>
+
+                <div>
+                    <img src="images/img-11.jpg" alt="Portfolio Image" class="rounded transition duration-300 portfolio-img">
+                </div>
+
+                <div>
+                    <img src="images/img-13.jpg" alt="Portfolio Image" class="rounded transition duration-300 portfolio-img">
+                </div>
+
+                <div>
+                    <img src="images/img-12.jpg" alt="Portfolio Image" class="rounded transition duration-300 portfolio-img">
+                </div>
+
+                <div>
+                    <img src="images/img-10.jpg" alt="Portfolio Image" class="rounded transition duration-300 portfolio-img">
+                </div>
+
+                <div>
+                    <img src="images/img-11.jpg" alt="Portfolio Image" class="rounded transition duration-300 portfolio-img">
+                </div>
+
+                <div>
+                    <img src="images/img-13.jpg" alt="Portfolio Image" class="rounded transition duration-300 portfolio-img">
+                </div>
+
+                <div>
+                    <img src="images/img-12.jpg" alt="Portfolio Image" class="rounded transition duration-300 portfolio-img">
+                </div>
+
+            </div>
+        </div>
+      </section>
+
+<div style="height: 200px;"></div>
+
+<footer class="p-4 sm:p-6 sm:pt-10 lg:px-6 dark:bg-gray-800">
+    <div class="mx-auto max-w-screen-xl">
+        <div class="md:flex md:justify-between">
+            <div class="mb-6 md:mb-0">
+                <a href="https://breathpartner.net" class="flex items-center">
+                    <img src="images/logobp.png" class="mr-3 h-8" alt="Breath Partner Footer Logo" />
+                </a>
+            </div>
+            <div class="grid grid-cols-2 gap-8 sm:gap-16 sm:grid-cols-2">
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Liens</h2>
+                    <ul class="text-gray-600 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="https://breathpartner.net" class="hover:underline">Page d'Accueil</a>
+                        </li>
+                        <li>
+                            <a href="https://tailwindcss.com/" class="hover:underline">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Nous Suivre</h2>
+                    <ul class="text-gray-600 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Facebook</a>
+                        </li>
+                        <li>
+                            <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">LinkedIn</a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+        <hr class="my-6 border-gray-300 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="https://breathpartner.net" class="hover:underline">Breath Partner</a>
+            </span>
+            <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+                <a href="#" class="text-gray-500 hover:text-[#4267B2] transition duration-200" target="_blank">
+                    <i class="fa-brands fa-square-facebook fa-2x"></i>
+                </a>
+                
+               
+                <a href="#" class="text-gray-500 hover:text-[#0077b5] transition duration-200" target="_blank">
+                    <i class="fa-brands fa-linkedin fa-2x"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<button id="fab" class="text-white bg-primary-700 hover:bg-primary-800">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/counterup2/2.0.2/index.min.js" integrity="sha512-iELsXYafbp3drYeT4GnTWc0bRzoyA9zeMPohtYOL/xmCEjqc7xbPpV0UXRfhjGgy3co9XR2YkZq/CQvEa+Os8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js" integrity="sha512-fHXRw0CXruAoINU11+hgqYvY/PcsOWzmj0QmcSOtjlJcqITbPyypc8cYpidjPurWpCnlB8VKfRwx6PIpASCUkQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="file.js"></script>
+
+</body>
+</html>
