@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Git for Absolute Beginners</title>
+
+	<link rel="stylesheet" href="dist/tailwind.css">
+    <link rel="stylesheet" href="css/dark.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<link rel="stylesheet" href="dist/style.css">
+</head>
+<body>
+
+<div class="page relative container px-4 md:px-32 py-4 mx-auto">
+	<h1 class="mb-0">Git for Absolute Beginners</h1>
+    <span class="block mb-5 text-sm">Tech Article by <strong>Rahmouni Moulay</strong></span>
+
+    <p>Ever had a coding project where you had to revert changes because of a bug? ...</p>
+
+    <p>In order to follow this tutorial, you need to have basic knowledge about the command line.</p>
+
+    <p>This tutorial might seem like a lot of information to take in at first, but it will be well worth it in the end I can assure you.</p>
+
+    <h2 id="what-is-git">What is Git?</h2>
+
+    <p>Git is a <strong>Version Control System</strong> that allows developers to <strong>collaborate</strong> on coding projects and <strong>track changes</strong> over time. It was created by Linus Torvalds (the creator of Linux) in 2005 and is used by the majority of developers worldwide.</p>
+
+    <h2 id="installation--configuration">Installation &amp; Configuration</h2>
+
+    <p>Now let us check if Git was installed correctly by executing the following command :</p>
+
+    <div class="my-4 px-2 md:px-4 pbi-avoid overflow-hidden">
+		<pre><code class="language-shell">$ git --version
+git version 2.37.2</code></pre>
+	</div>
+    
+    <p>Then, we set a name and email for our future Git repositories : </p>
+
+    <div class="my-4 px-2 md:px-4 pbi-avoid overflow-hidden">
+		<pre><code class="language-shell">git config --global user.name "John Doe"
+git config --global user.email "john.doe@gmail.com"</code></pre>
+	</div>
+    
+    <div class="my-4">
+		<div class="flex shadow-sm bg-blue-lesser px-4 py-3 text-white rounded border-course-blue-left flex-row items-center">
+			<i class="self-start fas fa-info-circle text-lg mr-3"></i>
+			<span>We use the <code class="code-element">--global</code> option to make sure our name and email are used for every Git repository on our computer.</span>
+		</div>
+	</div>
+
+    <h2 id="first-steps">First Steps</h2>
+
+</div>
+
+<script src="dist/jquery.min.js"></script>
+<script src="dist/highlight.min.js"></script>
+
+<script>
+  $(function() {
+  	hljs.highlightAll();
+  });
+</script>
+
+
+</body>
+</html>

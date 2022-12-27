@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Chap 2. Plugin Development Basics</title>
+
+	<link rel="stylesheet" href="dist/tailwind.css">
+    <link rel="stylesheet" href="dist/atom-one-dark.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<link rel="stylesheet" href="dist/style.css">
+</head>
+<body>
+
+<div class="page relative container px-4 md:px-32 py-4 mx-auto">
+	<h1 class="mb-0">Plugin Development Basics</h1>
+  <span class="block mb-5 text-sm">Tech Article by <strong>Rahmouni Moulay</strong></span>
+
+  <p>After learning about plugins and how useful they are in the previous chapter, we are going to (finally!) learn the basics of plugin development for WordPress.</p>
+
+  <p>As this eBook is <strong>beginner friendly</strong>, we will be talking about some PHP concepts you may already be familiar with.</p>
+
+  <p>Plugins live in the <strong>wp-content/plugins</strong> directory, they can be a single php file like the <strong>Hello Dolly</strong> plugin, or they can be grouped as folders that files working together.</p>
+
+  <div class="my-4">
+		<div class="flex shadow-sm bg-orange-lesser px-4 py-3 text-white rounded border-course-orange-left flex-row items-center">
+			<i class="self-start fas fa-exclamation-triangle text-lg mr-4"></i>
+			<span>Basic knowledge of <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong> and <strong>PHP</strong> is needed to understand this eBook well.</span>
+		</div>
+	</div>
+
+    <div class="my-4">
+		<div class="flex shadow-sm bg-blue-lesser px-4 py-3 text-white rounded border-course-blue-left items-center">
+			<i class="self-start mt-1 fas fa-info-circle text-lg mr-4"></i>
+			<p>There are many ways of creating plugins, such as the recommended Object-Oriented Programming approach. But for now we will keep things <strong>simple</strong> for learning's sake.</p>
+		</div>
+	</div>
+    
+    <h2>The Environment</h2>
+
+    <p>Before starting our endeavors, we are going to need a decent working environment for a <strong>good</strong> developer experience.</p>
+
+    <h3>Using the right tools</h3>
+
+    <h4>Local installation of WordPress</h4>
+
+    <p>We will be using WordPress locally.</p>
+
+    <h4>Web Browser</h4>
+    
+    <p><strong>Chrome</strong> and <strong>Firefox</strong> are very popular browser options for Web Development, as they come with developer-friendly toolkits.</p>
+
+    <h4>Code Editor</h4>
+
+    <p>A good and easy to use <strong>development-oriented text editor</strong> will dramatically increase your efficiency.</p>
+
+    <p>I recommend <a href="https://code.visualstudio.com/">Visual Studio Code</a> or <a href="https://www.sublimetext.com/">Sublime Text</a>.</p>
+
+    <h3>Enable Debug Mode</h3>
+
+    <p>One of the first things to do when developing plugins is to enable the built-in <strong>WordPress debugging</strong>, so that, when issues on your website arise, helpful <strong>error</strong> and <strong>warning</strong> messages will be displayed. It also turns on WordPress <strong>notices</strong>, in case you're using deprecated functions or arguments.</p>
+
+    <p>To activate WordPress debugging, we have to change the following line in the <strong>wp-config.php</strong> file located at the root of your WordPress installation from <strong>false</strong> (by default) to <strong>true</strong> : </p>
+
+    <div class="px-4 md:px-4 my-4 pbi-avoid overflow-hidden">
+		<pre><span class="file">wp-config.php</span><code class="language-php">// turns WordPress debugging on
+define('WP_DEBUG', true);</code></pre>
+	</div>
+
+    <div class="my-4 pbi-avoid overflow-hidden">
+		<div class="flex shadow-sm bg-red-lesser px-4 py-3 text-white rounded border-course-red-left items-center">
+			<i class="self-start mt-1 fas fa-times-circle text-lg mr-4"></i>
+			<p>Remember to turn <strong>WP_DEBUG</strong> back to <strong>false</strong> on a production environment (aka your live site), as it can be dangerous to reveal details about your code to visitors.</p>
+		</div>
+	</div>
+
+    <h2>Our Plugin's Folder Structure</h2>
+
+    <p>As said earlier in this chapter, a plugin can be a single file or a directory of files. Using a directory will help us maintain the source code when the plugin gets bigger.</p>
+
+    <p>Create a new folder in the <strong>wp-content/plugins</strong> and name it <strong>my-plugin</strong> (or whatever you want). Create two files inside of it : <strong>my-plugin.php</strong>, <strong>index.php</strong> and <strong>readme.txt</strong></p>
+
+    <p>Inside the <b>my-plugin</b> folder, we will create three folders : </p>
+
+    <ul class="mb-3">
+        <li>
+          <b>admin</b> will contain the dashboard area functionality
+        </li>
+
+        <li>
+          <b>assets</b> will house our CSS and JavaScript files
+        </li>
+
+        <li>
+          <b>includes</b> will contain several important and helpful PHP files
+        </li>
+    </ul>
+
+    <h4>Our Primary Plugin File</h4>
+
+    <p>The <strong>my-plugin.php</strong> file, located at the root of the <strong>my-plugin</strong> folder, will be the entry-point when...</p>
+
+  <h4>The Index File</h4>
+
+  <p>As for the <strong>index.php</strong> we will leave it empty for now.</p>
+
+  <h4>The Readme File</h4>
+
+  <p>The <strong>readme.txt</strong> is a file describing the plugin for use in the wordpress.org plugin directory*.</p>
+
+  <p>You should now have the following Folder Structure : </p>
+
+  <div class="px-4 md:px-4 my-4 pbi-avoid overflow-hidden">
+		<pre><span class="file">my-plugin Folder</span><code class="language-php">admin/
+assets/
+includes/
+index.php
+my-plugin.php
+readme.txt
+</code></pre>
+	</div>
+
+  <h2>Plugin Information Heade</h2>
+
+    <p>Every plugin needs to include an information header containing at least the plugin's name to be <strong>detected</strong> by WordPress. Several pieces of information can be added such as the plugin's description, the author's name, the version, etc...</p>
+
+    <p>The required information header should only be present* in the <strong>main plugin PHP file</strong>. It is written as a <b>PHP Multiline Comment</b> like the following : </p>
+
+    <div class="px-4 md:px-4 my-4 pbi-avoid overflow-hidden">
+		<pre><span class="file">my-plugin.php</span><code class="language-php">&lt;?php
+
+/* 
+	Plugin Name: My Plugin’s Name 
+	Description: Our Amazing Plugin! 
+	Author: John Doe
+  Version: 0.1
+*/
+</code></pre>
+	</div>
+
+  <div class="my-4">
+		<div class="flex shadow-sm bg-blue-lesser px-4 py-3 text-white rounded border-course-blue-left items-center">
+			<i class="fas fa-info-circle text-lg mr-4"></i>
+			<p>In a file containing only PHP code, it is <strong>optional</strong> to close the opening PHP tag.  </p>
+		</div>
+	</div>
+
+  <p>We can also add <strong>bold</strong> and <em>italic</em> text with the appropriate HTML tags.</p>
+
+  <div class="my-4">
+		<div class="flex shadow-sm bg-orange-lesser px-4 py-3 text-white rounded border-course-orange-left items-center">
+			<i class="fas fa-exclamation-triangle text-lg mr-4"></i>
+			<p>There must be no space between the <b>Information</b> and the <b>colon</b>.</p>
+		</div>
+	</div>
+
+    <p>Next, open up the WordPress Dashboard, go to <b>Plugins</b> and you will see our plugin listed there. Now <b>activate</b> it.</p>
+
+    <p><b>Congratulations!</b> You have now created your first WordPress plugin, even though it does nothing at the moment, something that shall be remedied soon. </p>
+
+    <h2>Basic Plugin Security</h2>
+
+    <p>Securing our plugin is a subject of the utmost importance, as most WordPress vulnerabilities come from Plugins. For now, we will only cover basic security features, only to <strong>progressively</strong> introduce new concepts in later chapters.</p>
+
+    <h4>Preventing Direct File Access</h4>
+
+    <p>A malicious user could attempt to access one of the plugin’s PHP files directly from the browser (or from another medium), allowing unauthorized access that could prove to be <strong>very</strong> dangerous. To prevent such an unpleasant scenario, you will have to add the following <b>condition check</b> just after the Information Header : 
+    </p>
+
+    <div class="px-4 md:px-4 my-4 pbi-avoid overflow-hidden">
+		  <pre><span class="file">my-plugin.php</span><code class="language-php">&lt;?php
+
+// previous code...
+
+// preventing direct file access
+if( !defined( 'ABSPATH' ) ) {
+	die;
+}
+</code></pre>
+	</div>
+
+  <p>The <code class="code-element">die</code> PHP language construct will stop the script. <code class="code-element">exit</code> can also be used instead of <code class="code-element">die</code>.</p>
+
+  <div class="my-4 pbi-avoid overflow-hidden">
+		<div class="flex shadow-sm bg-blue-lesser px-4 py-3 text-white rounded border-course-blue-left items-center">
+			<i class="self-start fas fa-info-circle text-lg mr-4"></i>
+			<p><strong>ABSPATH</strong> is a PHP constant declared inside the core of WordPress, which contains the absolute path to your WordPress installation.</p>
+		</div>
+	</div>
+
+  <div class="my-4 pbi-avoid overflow-hidden">
+		<div class="flex shadow-sm bg-orange-lesser px-4 py-3 text-white rounded border-course-orange-left items-center">
+			<i class="self-start fas fa-exclamation-triangle text-lg mr-4"></i>
+			<p>If <strong>ABSPATH</strong> is not defined, it means that the plugin is not being used inside a WordPress environment.</p>
+		</div>
+	</div>
+
+  <h4>Preventing Directory Listing</h4>
+
+    <p>It is considered <strong>good practice</strong> to include an empty index.php file (containing only an opening php tag), as it prevents users from accessing the directory listing of the plugin : </p>
+
+    <div class="px-4 md:px-4 my-4 pbi-avoid overflow-hidden">
+		<pre><span class="file">index.php</span><code class="language-php">&lt;?php
+// Silence is golden</code></pre>
+	</div>
+
+  <!--
+  <h2>Some WordPress Utilities</h2>
+
+  <p>WordPress provides us with helper functions that...</p>
+
+  <h3>Path Functions</h3>
+
+  <h3>Version Check (PHP & WordPress)</h3>
+  -->
+
+  <h2>Useful Utilities</h2>
+
+  <h3>Path Functions</h3>
+
+  <p>We often need to reference* files and folders in our WordPress installation. For that, we have several functions to find out where those files live.</p>
+
+  <p>It is much better to use these functions rather than relying on hard-coded paths or WordPress constants.</p>
+
+  <h3>PHP and WordPress Version Check</h3>
+
+  <h2>Plugin Activation & Deactivation</h2>
+
+  <p></p>
+
+  <h2>Hooks - Actions & Filters</h2>
+
+  <p>Hooks are a way of modifying WordPress' default behavior, by allowing us to perform a <strong>specific action</strong> at a <strong>specific time</strong>, without changing its source code.
+    
+  <p>For instance we can make modifications to a post when it is saved with the <strong>save_post</strong> action, or we can change the way the page title is formed by tinkering with the <strong>the_title</strong> filter. Also, a developer can interact with other plugins and themes, provided they have custom hooks.</p>
+
+  <h4>Hook Types</h4>
+
+  <p>There are two types of Hooks : <strong>Actions</strong> and <strong>Filters</strong></p>
+
+  <ul class="mb-3">
+    <li>
+      <b>Action Hooks - </b> At key moments... 
+    </li>
+
+    <li>
+      <b>Filter Hooks - </b> To intercept a value to alter it 
+    </li>
+  </ul>
+
+
+
+  <h4>What is a callback function?</h4>
+
+  <p>It is simply a function that is passed as a parameter to another function. We will be using that concept extensively.</p>
+
+  <h3>Common Hook Uses</h3>
+
+  <h4>Add CSS and JavaScript</h4>
+
+  <p>We could add a stylesheet directly with the <code class="code-element">&lt;link&gt;</code> tag inside our <code class="code-element">&lt;head&gt;</code> tag with a simple <strong>echo</strong> by using the <code class="code-element">wp_head</code> action, but this is not the recommended WordPress way.</p>
+
+  <p>We have a way of adding stylesheets and scripts that does not potentially cause conflicts with other plugins or themes. To do so, we can use the not-so-aptly named <code class="code-element">wp_enqueue_scripts</code> <strong>action</strong> hook like so : </p>
+
+  <div class="px-4 md:px-4 my-4 pbi-avoid overflow-hidden">
+		<pre><span class="file">my-plugin.php</span><code class="language-php">&lt;?php
+
+// previous code...
+
+function mp_enqueue_assets() {
+  // enqueuing our css file
+  wp_enqueue_style("my-style", 
+                  plugins_url('assets/my_style.css', __FILE__),
+                  [], "1.0", 'all');
+
+  // enqueueing our script file
+  wp_enqueue_script("my-jsfile",
+                    plugins_url('assets/my_script.js', __FILE__),
+                    [], "1.0", true);
+}  
+
+// we hook the action to our callback function
+add_action( "wp_enqueue_scripts" , "mp_enqueue_assets" );
+</code></pre>
+	</div>  
+
+  <p>Let's take a look at the <code class="code-element">wp_enqueue_style</code> WordPress function : </p>
+
+  <ol class="mb-3">
+    <li>
+      <b>handle : </b> the unique identifier of our css file
+    </li>
+
+    <li>
+      <b>src :</b> the path to the stylesheet (or full URL) 
+    </li>
+
+    <li>
+      <b>deps :</b> an array of stylesheets this stylesheet depends on* (optional)
+    </li>
+
+    <li>
+      <b>version :</b> the stylesheet's version number, useful for <strong>cache busting</strong> (optional)
+    </li>
+
+    <li>
+      <b>media :</b> the media, by default 'all'* (optional)
+    </li>
+</ol>
+
+<p>Now the <code class="code-element">wp_enqueue_script</code> WordPress function : </p>
+
+  <ol class="mb-3">
+    <li>
+      <b>handle : </b> the unique identifier of our script file
+    </li>
+
+    <li>
+      <b>src :</b> the path to the JavaScript file (or full URL) 
+    </li>
+
+    <li>
+      <b>deps :</b> an array of scripts this script depends on* (optional)
+    </li>
+
+    <li>
+      <b>version :</b> the script's version number, useful for <strong>cache busting</strong> (optional) 
+    </li>
+
+    <li>
+      <b>in_footer :</b> defines if the script should be in the footer, <strong>false</strong> by default (optional)
+    </li>
+</ol>
+
+<p>To test if the enqueueing of our files worked, check the source code of any WordPress page and you will find our link and script tags within*.</p>
+
+<div class="my-4 pbi-avoid overflow-hidden">
+  <div class="flex shadow-sm bg-green-lesser px-4 py-3 text-white rounded border-course-green-left items-center">
+    <i class="self-start fas fa-check-circle text-lg mr-4"></i>
+    <p>In order to <strong>improve performance</strong>, asset files are cached by the browser, so they are <strong>not downloaded again</strong> every time the page is refreshed. Now what happens when we want to update those same assets? The browser will use the older asset versions! That's where <strong>Cache Busting</strong> comes in, it is a way to update those files while web caching is active.</p>
+  </div>
+</div>
+
+  <h4>Add a Settings link</h4>
+
+  <p>
+    Actions Links are the links just under the name of a plugin on the Dashboard Plugin List, such as <strong>Activate</strong> and <strong>Deactivate</strong>.
+  </p>
+  
+  <p>
+    In this section, we will add a <strong>Settings</strong> link that will point to our "future" custom admin page. For that, we need to use a special type of <strong>filter</strong> that has a variable name called <code class="code-element">plugin_action_links_{$plugin_file}</code>.
+  </p>
+
+  <p>The <strong>{$plugin_file}</strong> is the path to the plugin file relative to the plugins folder, in our case : <strong>my-plugin/my-plugin.php</strong></p> 
+
+  <p>We can retrieve it with the <code class="code-element">plugin_basename</code> WordPress function.</p>
+  
+  <div class="px-4 md:px-4 my-4 pbi-avoid overflow-hidden">
+		<pre><span class="file">my-plugin.php</span><code class="language-php">&lt;?php
+
+// previous code...
+
+// we retrieve the relative plugin's name
+$plugin_name = plugin_basename( __FILE__ );
+
+// we hook the filter to our callback function
+add_filter( "plugin_action_links_$plugin_name" , "mp_add_action_links" );
+
+function mp_add_action_links($links) {
+  $url = "my_custom_admin_page.php";
+  $mylinks = "&lt;a href=$url>Settings&lt;/a&gt;"; 
+  
+  // we "push" the $mylinks variable at the end of our array
+  array_push($links, $mylinks); 
+  
+  return $links;
+}  
+</code></pre>
+	</div>
+  
+	<p>When using the double quotes in a string in PHP, the variables in it will be replaced with their value.</p>
+		
+
+  
+
+</div>
+
+<script src="dist/jquery.min.js"></script>
+<script src="dist/highlight.min.js"></script>
+
+<script>
+  $(function() {
+  	hljs.highlightAll();
+  });
+</script>
+
+
+</body>
+</html>
