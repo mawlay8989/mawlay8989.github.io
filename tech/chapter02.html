@@ -27,14 +27,14 @@
   <div class="my-4">
 		<div class="flex shadow-sm bg-orange-lesser px-4 py-3 text-white rounded border-course-orange-left flex-row items-center">
 			<i class="self-start fas fa-exclamation-triangle text-lg mr-4"></i>
-			<span>Basic knowledge of <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong> and <strong>PHP</strong> is needed to understand this eBook well.</span>
+			<p class="mb-0">Basic knowledge of <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong> and <strong>PHP</strong> is needed to understand this eBook well.</p>
 		</div>
 	</div>
 
     <div class="my-4">
 		<div class="flex shadow-sm bg-blue-lesser px-4 py-3 text-white rounded border-course-blue-left items-center">
 			<i class="self-start mt-1 fas fa-info-circle text-lg mr-4"></i>
-			<p>There are many ways of creating plugins, such as the recommended Object-Oriented Programming approach. But for now we will keep things <strong>simple</strong> for learning's sake.</p>
+			<p class="mb-0">There are many ways of creating plugins, such as the recommended Object-Oriented Programming approach. But for now we will keep things <strong>simple</strong> for learning's sake.</p>
 		</div>
 	</div>
     
@@ -72,7 +72,7 @@ define('WP_DEBUG', true);</code></pre>
     <div class="my-4 pbi-avoid overflow-hidden">
 		<div class="flex shadow-sm bg-red-lesser px-4 py-3 text-white rounded border-course-red-left items-center">
 			<i class="self-start mt-1 fas fa-times-circle text-lg mr-4"></i>
-			<p>Remember to turn <strong>WP_DEBUG</strong> back to <strong>false</strong> on a production environment (aka your live site), as it can be dangerous to reveal details about your code to visitors.</p>
+			<p class="mb-0">Remember to turn <strong>WP_DEBUG</strong> back to <strong>false</strong> on a production environment (aka your live site), as it can be dangerous to reveal details about your code to visitors.</p>
 		</div>
 	</div>
 
@@ -143,7 +143,7 @@ readme.txt
   <div class="my-4">
 		<div class="flex shadow-sm bg-blue-lesser px-4 py-3 text-white rounded border-course-blue-left items-center">
 			<i class="fas fa-info-circle text-lg mr-4"></i>
-			<p>In a file containing only PHP code, it is <strong>optional</strong> to close the opening PHP tag.  </p>
+			<p class="mb-0">In a file containing only PHP code, it is <strong>optional</strong> to close the opening PHP tag.  </p>
 		</div>
 	</div>
 
@@ -152,7 +152,7 @@ readme.txt
   <div class="my-4">
 		<div class="flex shadow-sm bg-orange-lesser px-4 py-3 text-white rounded border-course-orange-left items-center">
 			<i class="fas fa-exclamation-triangle text-lg mr-4"></i>
-			<p>There must be no space between the <b>Information</b> and the <b>colon</b>.</p>
+			<p class="mb-0">There must be no space between the <b>Information</b> and the <b>colon</b>.</p>
 		</div>
 	</div>
 
@@ -185,15 +185,15 @@ if( !defined( 'ABSPATH' ) ) {
 
   <div class="my-4 pbi-avoid overflow-hidden">
 		<div class="flex shadow-sm bg-blue-lesser px-4 py-3 text-white rounded border-course-blue-left items-center">
-			<i class="self-start fas fa-info-circle text-lg mr-4"></i>
-			<p><strong>ABSPATH</strong> is a PHP constant declared inside the core of WordPress, which contains the absolute path to your WordPress installation.</p>
+			<i class="self-start mt-1 fas fa-info-circle text-lg mr-4"></i>
+			<p class="mb-0"><code class="code-element">ABSPATH</code> is a PHP constant declared inside the core of WordPress, which contains the absolute path to your WordPress installation.</p>
 		</div>
 	</div>
 
   <div class="my-4 pbi-avoid overflow-hidden">
 		<div class="flex shadow-sm bg-orange-lesser px-4 py-3 text-white rounded border-course-orange-left items-center">
 			<i class="self-start fas fa-exclamation-triangle text-lg mr-4"></i>
-			<p>If <strong>ABSPATH</strong> is not defined, it means that the plugin is not being used inside a WordPress environment.</p>
+			<p class="mb-0">If <code class="code-element">ABSPATH</code> is not defined, it means that the plugin is not being used inside a WordPress environment.</p>
 		</div>
 	</div>
 
@@ -339,7 +339,7 @@ add_action( "wp_enqueue_scripts" , "mp_enqueue_assets" );
 <div class="my-4 pbi-avoid overflow-hidden">
   <div class="flex shadow-sm bg-green-lesser px-4 py-3 text-white rounded border-course-green-left items-center">
     <i class="self-start fas fa-check-circle text-lg mr-4"></i>
-    <p>In order to <strong>improve performance</strong>, asset files are cached by the browser, so they are <strong>not downloaded again</strong> every time the page is refreshed. Now what happens when we want to update those same assets? The browser will use the older asset versions! That's where <strong>Cache Busting</strong> comes in, it is a way to update those files while web caching is active.</p>
+    <p class="mb-0">In order to <strong>improve performance</strong>, asset files are cached by the browser, so they are <strong>not downloaded again</strong> every time the page is refreshed. Now what happens when we want to update those same assets? The browser will use the older asset versions! That's where <strong>Cache Busting</strong> comes in, it is a way to update those files while web caching is active.</p>
   </div>
 </div>
 
