@@ -1,0 +1,871 @@
+@extends('moulay/layouts/layout')
+
+@section('content')
+    
+<nav class="sticky top-0 bg-[#1F2937] py-4 text-sm z-40 shadow-lg">
+    <div class="container w-full max-w-full mx-auto px-4 lg:px-16 flex gap-4 flex justify-between items-center">
+        <div class="flex items-center">
+            <button id="hamburger">
+                <img src="{{ asset('mark.svg') }}" alt="" class="mr-5" width="32" height="32">
+            </button>
+                
+            
+    
+            <ul class="flex">
+                <li class="p-3 rounded-lg bg-[#111827] cursor-pointer">
+                    <a href="" class="text-white">
+                        Home
+                    </a>
+                </li>
+    
+                <li class="p-3 rounded-lg hover:bg-[#374151] cursor-pointer">
+                    <a href="" class="text-white">
+                        Équipe
+                    </a>
+                </li>
+    
+                <li class="p-3 rounded-lg hover:bg-[#374151] cursor-pointer">
+                    <a href="" class="text-white">
+                        Projets
+                    </a>
+                </li>
+    
+                <li class="p-3 rounded-lg hover:bg-[#374151] cursor-pointer">
+                    <a href="" class="text-white">
+                        Calendrier
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="relative mx-auto text-gray-600 lg:block hidden">
+            <input
+                class="border-2 border-gray-300 bg-white h-10 pl-4 pr-8 rounded-lg text-sm focus:outline-none"
+                type="search" name="search" placeholder="Recherche...">
+            <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
+                <svg class="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
+                     version="1.1" id="Capa_1" x="0px" y="0px"
+                     viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;"
+                     xml:space="preserve"
+                     width="512px" height="512px">
+            <path
+                d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"/>
+          </svg>
+            </button>
+        </div>
+
+        <div class="notification text-white flex items-center gap-5">
+            <div class="flex gap-5 items-center ">
+                <a href="">
+                    <i class="fa-solid fa-bell text-lg text-gray-200 hover:text-white"></i>
+                </a>
+
+               
+                
+                <img src="{{ asset('joseph.jpg') }}" alt="" width="32" height="32" class="rounded-full">
+                <a href="">
+                    <i class="fa-solid fa-gear text-lg text-gray-200 hover:text-white"></i>
+                </a>
+
+            </div>
+            
+            
+            <div>
+                <a href="" class="p-2 px-4 bg-blue-500 hover:bg-blue-600 rounded-xl shadow flex gap-2 font-semibold items-center text-base"><img src="{{ asset('plus.svg') }}" alt="" width="20" height="20" class="fill-white"> Ajouter une Annonce</a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="w-full relative particles-div mb-8">
+    <div id="particles-js" class="">
+        <h2 class="text-5xl font-bold mb-5 text-center search-text text-white mt-28">Rechercher sur Tbezniss</h2>
+    </div>
+
+    <section class="search px-4 lg:px-80 mb-32 pt-32">
+
+        <h2 class="text-5xl font-bold mb-5 text-center search-text text-white">Rechercher sur Tbezniss</h2>
+    
+        <div class="relative">
+            <form>   
+                <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        </div>
+                        <input type="search" id="default-search" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-100 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Rechercher des Annonces..." autocomplete="off" required>
+                        <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-600">Rechercher</button>
+                    </div>
+            </form>
+            
+            <div id="searchSuggestions" class="hidden absolute mt-2 w-full overflow-hidden rounded-md bg-gray-100 z-30 shadow-lg py-2">
+                <span class="block px-1 pt-2 text-sm pl-3 font-bold text-blue-500">Recherches récentes</span>
+    
+                <div class="py-1">
+                    <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
+                        <p class="text-sm font-bold text-gray-600">Laptop Asus</p>
+                        
+                      </div>
+                      <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
+                        <p class="text-sm font-bold text-gray-600">Chemise</p>
+                        
+                      </div>
+                      <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
+                        <p class="text-sm font-bold text-gray-600">Réfrigateur</p>
+                        
+                      </div>
+                      <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
+                        <p class="text-sm font-bold text-gray-600">Développeur web emploi</p>
+                        
+                      </div>
+                </div>
+                
+    
+                  <div class="px-4">
+                    <hr class="border-gray-300 border">
+                  </div>
+                  
+                  <span class="block px-1 pt-2 text-sm pl-3 font-bold text-blue-500">Suggestions</span>
+    
+                  <div class="py-1">
+                    <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
+                        <p class="text-sm font-bold text-gray-600">Carte Mère Asus</p>
+                        
+                      </div>
+        
+                      <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
+                        <p class="text-sm font-bold text-gray-600">Frigidaire Samsung</p>
+                        
+                      </div>
+        
+                      <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
+                        <p class="text-sm font-bold text-gray-600">Chemise Ralph-Lauren</p>
+                        
+                      </div>
+        
+                      <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
+                        <p class="text-sm font-bold text-gray-600">Développeur Mobile</p>
+                        
+                      </div>
+                  </div>
+                  
+            </div>
+        </div>
+        
+        
+    
+    </section>
+</div>
+
+
+
+
+<section class="categories mx-auto px-4 lg:px-32 mb-32 max-w-full w-full">
+    <div class="container flex flex-col justify-center mx-auto">
+        
+           
+                <!-- Slider main container -->
+                <div class="swiperCateg my-20">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper ">
+                    <!-- Slides -->
+
+
+                        <div class="swiper-slide text-center">
+                            <div class="text-center hover:opacity-90 transition duration-200 cursor-pointer mb-20 w-full relative">
+                                <img src="{{ asset('hexagon-fill-blue.svg') }}" alt="" class="img-category" width="128" height="128">
+                                
+                                <img src="{{ asset('car2.png') }}" alt="" class="img-category" width="80" height="80">
+                            </div>
+                            
+                            <div class="">
+                                <a href="#" class="font-bold transiton duration-200 hover:text-blue-500">Automobile</a>
+                            </div>
+                            
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="text-center hover:opacity-90 transition duration-200 cursor-pointer mb-20 w-full relative">
+                                <img src="{{ asset('hexagon-fill-red.svg') }}" alt="" class="img-category" width="128" height="128">
+                                <img src="{{ asset('immo3.webp') }}" alt="" class="img-category" width="80" height="80">
+                            </div>
+                            
+                            <div class="flex justify-center">
+                                <a href="#" class="font-bold transiton duration-200 hover:text-blue-500">Immobilier</a>
+                            </div>
+                            
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="text-center hover:opacity-90 transition duration-200 cursor-pointer mb-20 w-full relative">
+                                <img src="{{ asset('hexagon-fill-green.svg') }}" alt="" class="img-category" width="128" height="128">
+                                <img src="{{ asset('chemise.png') }}" alt="" class="img-category" width="80" height="80">
+                            </div>
+                            
+                            <div class="flex justify-center">
+                                <a href="#" class="font-bold transiton duration-200 hover:text-blue-500">Vètements</a>
+                            </div>
+                            
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="text-center hover:opacity-90 transition duration-200 cursor-pointer mb-20 w-full relative">
+                                <img src="{{ asset('hexagon-fill-orange.svg') }}" alt="" class="img-category" width="128" height="128">
+                                <img src="{{ asset('laptop.png') }}" alt="" class="img-category" width="80" height="80">
+                            </div>
+                            
+                            <div class="flex justify-center">
+                                <a href="#" class="font-bold transiton duration-200 hover:text-blue-500">Informatique</a>
+                            </div>
+                            
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="text-center hover:opacity-90 transition duration-200 cursor-pointer mb-20 w-full relative">
+                                <img src="{{ asset('hexagon-fill-violet.svg') }}" alt="" class="img-category" width="128" height="128">
+                                <img src="{{ asset('emploi.png') }}" alt="" class="img-category" width="80" height="80">
+                            </div>
+                            
+                            <div class="flex justify-center">
+                                <a href="#" class="font-bold transiton duration-200 hover:text-blue-500">Emplois</a>
+                            </div>
+                            
+                        </div>
+
+                        <div class="swiper-slide text-center">
+                            <div class="text-center hover:opacity-90 transition duration-200 cursor-pointer mb-20 w-full relative">
+                                <img src="{{ asset('hexagon-fill-blue.svg') }}" alt="" class="img-category" width="128" height="128">
+                                <img src="{{ asset('car2.png') }}" alt="" class="img-category" width="80" height="80">
+                            </div>
+                            
+                            <div class="">
+                                <a href="#" class="font-bold transiton duration-200 hover:text-blue-500">Automobile</a>
+                            </div>
+                            
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="text-center hover:opacity-90 transition duration-200 cursor-pointer mb-20 w-full relative">
+                                <img src="{{ asset('hexagon-fill-red.svg') }}" alt="" class="img-category" width="128" height="128">
+                                <img src="{{ asset('immo3.webp') }}" alt="" class="img-category" width="80" height="80">
+                            </div>
+                            
+                            <div class="flex justify-center">
+                                <a href="#" class="font-bold transiton duration-200 hover:text-blue-500">Immobilier</a>
+                            </div>
+                            
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="text-center hover:opacity-90 transition duration-200 cursor-pointer mb-20 w-full relative">
+                                <img src="{{ asset('hexagon-fill-green.svg') }}" alt="" class="img-category" width="128" height="128">
+                                <img src="{{ asset('chemise.png') }}" alt="" class="img-category" width="80" height="80">
+                            </div>
+                            
+                            <div class="flex justify-center">
+                                <a href="#" class="font-bold transiton duration-200 hover:text-blue-500">Vètements</a>
+                            </div>
+                            
+                        </div>
+
+                        
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+                
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev1">
+                        <img src="{{ asset('arrow-left.svg') }}" alt="" width="24" height="24">
+                    </div>
+                    <div class="swiper-button-next1">
+                        <img src="{{ asset('arrow-right.svg') }}" alt="" width="24" height="24">
+                    </div>
+                
+                
+                </div>
+              
+            
+            
+             
+            
+    </div>
+</section>
+<section class="cards1 px-4 lg:px-32">
+    <div class="container flex gap-8">
+        
+        <div class="relative">
+            <div>
+                <div class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ... w-64 h-48 rounded-lg shadow-lg skew-y-6">
+                   
+                </div>
+
+            </div>
+
+            <div class="image-absolute ">
+                <img src="{{ asset('car2.png') }}" alt="" class="drop-shadow-lg	">
+            </div>
+        </div>
+
+        <div class="flex gap-6">
+            <div class="card border rounded shadow">
+                <a href="">
+                    <img src="{{ asset('joseph.jpg') }}" alt="" class="inline-block object-fit w-full ">
+                </a>
+    
+                <div class="p-4">
+                    <a href="">
+                        <h3 class="font-bold mb-3">Card Title</h3>
+                    </a>
+                    
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+                </div>
+                
+            </div>
+
+            <div class="card border rounded shadow">
+                <a href="">
+                    <img src="{{ asset('joseph.jpg') }}" alt="" class="inline-block object-fit w-full ">
+                </a>
+    
+                <div class="p-4">
+                    <a href="">
+                        <h3 class="font-bold mb-3">Card Title</h3>
+                    </a>
+                    
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+                </div>
+                
+            </div>
+
+            <div class="card border rounded shadow">
+                <a href="">
+                    <img src="{{ asset('joseph.jpg') }}" alt="" class="inline-block object-fit w-full ">
+                </a>
+    
+                <div class="p-4">
+                    <a href="">
+                        <h3 class="font-bold mb-3">Card Title</h3>
+                    </a>
+                    
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+</section>
+-->
+
+<section class="cards1 px-4 lg:px-32 mb-32">
+    <div class="container flex flex-col lg:flex-row items-center">
+        
+        <div class="relative mr-10 ">
+            <div>
+                <div class=" bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ... w-80 h-64 rounded-lg shadow-lg skew-y-6">
+                   
+                </div>
+
+            </div>
+
+            <div class="image-absolute mb-8">
+                <img src="{{ asset('car2.png') }}" alt="" class="select-none drop-shadow-lg car1">
+                <img src="{{ asset('car4.png') }}" alt="" class="select-none drop-shadow-lg car2">
+            </div>
+
+            <h2 class="text-4xl font-bold text-center">Automobiles</h2>
+        </div>
+
+        
+            <div class="swiper swiperCats">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper h-full">
+                  <!-- Slides -->
+                  <div class="swiper-slide ">
+                    <div class="card rounded shadow-lg h-full  ">
+                        <a href="">
+                            <div class="card-image">
+                                <img src="{{ asset('car3.jpg') }}" alt="" class="object-fit rounded-t-lg">
+                            </div>
+                            
+                        </a>
+
+                        
+            
+                        <div class="p-4 bg-gray-200 w-full">
+                            <p class="text-red-500 "><span class="font-bold text-[18px]">35.000</span> DA</p>
+
+                            <a href="">
+                                <h3 class="font-bold mb-3 text-sm">Card Moulay</h3>
+                            </a>
+                            
+                            <p class="text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+                        </div>
+                        
+                    </div>
+                  </div>
+    
+                  <div class="swiper-slide">
+                    <div class="card rounded shadow">
+                        <a href="">
+                            <div class="card-image">
+                                <img src="{{ asset('car6.jpg') }}" alt="" class=" rounded-t-lg">
+                            </div>
+                        </a>
+            
+                        <div class="p-4 bg-gray-200">
+                            <p class="text-red-500 "><span class="font-bold text-[18px]">35.000</span> DA</p>
+
+                            <a href="">
+                                <h3 class="font-bold mb-3 text-sm">Card Moulay</h3>
+                            </a>
+                            
+                            <p class="text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+                        </div>
+                        
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card rounded shadow">
+                        <a href="">
+                            <div class="card-image">
+                                <img src="{{ asset('car3.jpg') }}" alt="" class="rounded-t-lg ">
+                            </div>
+                        </a>
+            
+                        <div class="p-4 bg-gray-200">
+                            <p class="text-red-500 "><span class="font-bold text-[18px]">35.000</span> DA</p>
+
+                            <a href="">
+                                <h3 class="font-bold mb-3 text-sm">Card Moulay</h3>
+                            </a>
+                            
+                            <p class="text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+                        </div>
+                        
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card rounded shadow">
+                        <a href="">
+                            <div class="card-image">
+                                <img src="{{ asset('car6.jpg') }}" alt="" class="rounded-t-lg ">
+                            </div>
+                        </a>
+            
+                        <div class="p-4 bg-gray-200">
+                            <p class="text-red-500 "><span class="font-bold text-[18px]">35.000</span> DA</p>
+
+                            <a href="">
+                                <h3 class="font-bold mb-3 text-sm">Card Moulay</h3>
+                            </a>
+                            
+                            <p class="text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+                        </div>
+                        
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card rounded shadow">
+                        <a href="">
+                            <div class="card-image">
+                                <img src="{{ asset('car3.jpg') }}" alt="" class="rounded-t-lg ">
+                            </div>
+                        </a>
+            
+                        <div class="p-4 bg-gray-200">
+                            <p class="text-red-500 "><span class="font-bold text-[18px]">35.000</span> DA</p>
+
+                            <a href="">
+                                <h3 class="font-bold mb-3 text-sm">Card Moulay</h3>
+                            </a>
+                            
+                            <p class="text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+                        </div>
+                        
+                    </div>
+                  </div>
+                  
+                  <div class="swiper-slide">
+                    <div class="card rounded shadow">
+                        <a href="">
+                            <div class="card-image">
+                                <img src="{{ asset('car6.jpg') }}" alt="" class="rounded-t-lg ">
+                            </div>
+                        </a>
+            
+                        <div class="p-4 bg-gray-200">
+                            <p class="text-red-500 "><span class="font-bold text-[18px]">35.000</span> DA</p>
+
+                            <a href="">
+                                <h3 class="font-bold mb-3 text-sm">Card Moulay</h3>
+                            </a>
+                            
+                            <p class="text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+                        </div>
+                        
+                    </div>
+                  </div>
+    
+                  <div class="swiper-slide">
+                    <div class="card rounded shadow">
+                        <a href="">
+                            <div class="card-image">
+                                <img src="{{ asset('car3.jpg') }}" alt="" class="rounded-t-lg ">
+                            </div>
+                        </a>
+            
+                        <div class="p-4 bg-gray-200">
+                            <p class="text-red-500 "><span class="font-bold text-[18px]">35.000</span> DA</p>
+
+                            <a href="">
+                                <h3 class="font-bold mb-3 text-sm">Card Moulay</h3>
+                            </a>
+                            
+                            <p class="text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+                        </div>
+                        
+                    </div>
+                  </div>
+                  ...
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+              
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev">
+                    <img src="{{ asset('arrow-left.svg') }}" alt="" width="32" height="32">
+                </div>
+                <div class="swiper-button-next">
+                    <img src="{{ asset('arrow-right.svg') }}" alt="" width="32" height="32">
+                </div>
+              
+                
+              </div>
+
+    </div>
+</section>
+
+<section class="cards1 px-4 lg:px-32 mb-32">
+    <div class="container flex flex-col lg:flex-row items-center">
+        
+        <div class="relative mr-10 ">
+            <div>
+                <div class=" bg-gradient-to-r from-[#060333] via-[#090979] to-[#00d4ff] ... w-80 h-64 rounded-lg shadow-lg skew-y-6 rounded-lg">
+                   
+                </div>
+
+            </div>
+
+            <div class="image-absolute mb-8">
+                <img src="{{ asset('immo3.webp') }}" alt="" class="select-none drop-shadow-lg car1">
+                <img src="{{ asset('house2.png') }}" alt="" class="select-none drop-shadow-lg car2">
+            </div>
+
+            <h2 class="text-4xl font-bold text-center">Immobilier</h2>
+        </div>
+
+        
+            <div class="swiper swiperCats">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+                  <div class="swiper-slide ">
+                    <div class="card  shadow-lg  ">
+                        <a href="">
+                            <div class="card-image">
+                                <img src="{{ asset('build12.jpg') }}" alt="" class="rounded-t-lg object-cover">
+                            </div>
+                            
+                        </a>
+
+                        
+            
+                        <div class="p-4 bg-gray-200 w-full">
+                            <p class="text-red-500 "><span class="font-bold text-[18px]">35.000</span> DA</p>
+
+                            <a href="">
+                                <h3 class="font-bold mb-3 text-sm">Card Moulay</h3>
+                            </a>
+                            
+                            <p class="text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+                        </div>
+                        
+                    </div>
+                  </div>
+    
+                  <div class="swiper-slide">
+                    <div class="card rounded shadow">
+                        <a href="">
+                            <div class="card-image">
+                                <img src="{{ asset('build22.jpg') }}" alt="" class="rounded-t-lg ">
+                            </div>
+                        </a>
+            
+                        <div class="p-4 bg-gray-200">
+                            <p class="text-red-500 "><span class="font-bold text-[18px]">35.000</span> DA</p>
+
+                            <a href="">
+                                <h3 class="font-bold mb-3 text-sm">Card Moulay</h3>
+                            </a>
+                            
+                            <p class="text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+                        </div>
+                        
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card rounded shadow">
+                        <a href="">
+                            <div class="card-image">
+                                <img src="{{ asset('build12.jpg') }}" alt="" class="rounded-t-lg ">
+                            </div>
+                        </a>
+            
+                        <div class="p-4 bg-gray-200">
+                            <p class="text-red-500 "><span class="font-bold text-[18px]">35.000</span> DA</p>
+
+                            <a href="">
+                                <h3 class="font-bold mb-3 text-sm">Card Moulay</h3>
+                            </a>
+                            
+                            <p class="text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+                        </div>
+                        
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card rounded shadow">
+                        <a href="">
+                            <div class="card-image">
+                                <img src="{{ asset('build22.jpg') }}" alt="" class="rounded-t-lg ">
+                            </div>
+                        </a>
+            
+                        <div class="p-4 bg-gray-200">
+                            <p class="text-red-500 "><span class="font-bold text-[18px]">35.000</span> DA</p>
+
+                            <a href="">
+                                <h3 class="font-bold mb-3 text-sm">Card Moulay</h3>
+                            </a>
+                            
+                            <p class="text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+                        </div>
+                        
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card rounded shadow">
+                        <a href="">
+                            <div class="card-image">
+                                <img src="{{ asset('build12.jpg') }}" alt="" class=" rounded-t-lg">
+                            </div>
+                        </a>
+            
+                        <div class="p-4 bg-gray-200">
+                            <p class="text-red-500 "><span class="font-bold text-[18px]">35.000</span> DA</p>
+
+                            <a href="">
+                                <h3 class="font-bold mb-3 text-sm">Card Moulay</h3>
+                            </a>
+                            
+                            <p class="text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+                        </div>
+                        
+                    </div>
+                  </div>
+                  
+                  <div class="swiper-slide">
+                    <div class="card rounded shadow">
+                        <a href="">
+                            <div class="card-image">
+                                <img src="{{ asset('build22.jpg') }}" alt="" class="rounded-t-lg ">
+                            </div>
+                        </a>
+            
+                        <div class="p-4 bg-gray-200">
+                            <p class="text-red-500 "><span class="font-bold text-[18px]">35.000</span> DA</p>
+
+                            <a href="">
+                                <h3 class="font-bold mb-3 text-sm">Card Moulay</h3>
+                            </a>
+                            
+                            <p class="text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+                        </div>
+                        
+                    </div>
+                  </div>
+    
+                  <div class="swiper-slide">
+                    <div class="card rounded shadow">
+                        <a href="">
+                            <div class="card-image">
+                                <img src="{{ asset('build12.jpg') }}" alt="" class="rounded-t-lg ">
+                            </div>
+                        </a>
+            
+                        <div class="p-4 bg-gray-200">
+                            <p class="text-red-500 "><span class="font-bold text-[18px]">35.000</span> DA</p>
+
+                            <a href="">
+                                <h3 class="font-bold mb-3 text-sm">Card Moulay</h3>
+                            </a>
+                            
+                            <p class="text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+                        </div>
+                        
+                    </div>
+                  </div>
+                  ...
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+              
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev">
+                    <img src="{{ asset('arrow-left.svg') }}" alt="" width="32" height="32">
+                </div>
+                <div class="swiper-button-next">
+                    <img src="{{ asset('arrow-right.svg') }}" alt="" width="32" height="32">
+                </div>
+              
+                
+              </div>
+
+    </div>
+</section>
+
+<div class="bg-gray-900 spikes py-20 text-white text-center px-4 lg:px-96 mb-32">
+    <div class="container flex flex-col justify-center items-center">
+<h2 class="text-5xl font-bold mb-10">Promotion 2023</h2>
+
+<p class="text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, earum voluptate laboriosam at porro, nostrum a commodi asperiores iure, modi laudantium laborum quis quae magnam pariatur voluptatem autem repudiandae illum?</p>
+    </div>
+</div>
+
+<div class="mx-auto  text-center">
+    <a href="" class="rounded-lg bg-blue-500 hover:bg-blue-600 text-xl p-6 px-10 uppercase font-bold text-white text-center">Toutes les Annonces</a>
+</div>
+
+<div style="height: 160px;"></div>
+
+
+<div class="footer fixed bottom-0 w-full max-w-full bg-gray-50 py-3 z-20 px-4 lg:px-96 mx-auto shadow-lg border border-t">
+    <div class="container flex justify-between items-center">
+        <div>
+            <img src="{{ asset('user-circle-o.svg') }}" alt="" width="24" height="24">
+        </div>
+
+        <div>
+            <img src="{{ asset('search.svg') }}" alt="" width="24" height="24">
+        </div>
+
+        <div>
+            <img src="{{ asset('shopping-cart.svg') }}" alt="" width="24" height="24">
+        </div>
+
+        <div>
+            <img src="{{ asset('plus-circle-footer.svg') }}" alt="" width="24" height="24">
+        </div>
+    </div>
+</div>
+
+<div class="bg-[#1F2937] dark:bg-gray-900 px-4 lg:px-32 mx-auto text-sm">
+    <div class="grid grid-cols-2 gap-8 px-6 py-8 md:grid-cols-4">
+        <div>
+            <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-gray-400">Company</h2>
+            <ul class="text-gray-500 dark:text-gray-400">
+                <li class="mb-4">
+                    <a href="#" class=" hover:underline">About</a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Careers</a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Brand Center</a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Blog</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-gray-400">Help center</h2>
+            <ul class="text-gray-500 dark:text-gray-400">
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Discord Server</a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Twitter</a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Facebook</a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-gray-400">Legal</h2>
+            <ul class="text-gray-500 dark:text-gray-400">
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Privacy Policy</a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Licensing</a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-gray-400">Download</h2>
+            <ul class="text-gray-500 dark:text-gray-400">
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">iOS</a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Android</a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Windows</a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">MacOS</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+<div class="px-4 py-6 bg-[#161d26] dark:bg-gray-700 md:flex md:items-center md:justify-between px-4 lg:px-32 mx-auto">
+    <span class="text-sm text-gray-500 dark:text-gray-300 sm:text-center">© 2023 Tbezniss. Tous Droits Réservés.
+    </span>
+    <div class="flex mt-4 space-x-6 sm:justify-center md:mt-0">
+        <a href="#" class="text-gray-400 hover:text-gray-900 dark:hover:text-white">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+            <span class="sr-only">Facebook page</span>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-gray-900 dark:hover:text-white">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+            <span class="sr-only">Instagram page</span>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-gray-900 dark:hover:text-white">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
+            <span class="sr-only">Twitter page</span>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-gray-900 dark:hover:text-white">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+            <span class="sr-only">GitHub account</span>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-gray-900 dark:hover:text-white">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z" clip-rule="evenodd" /></svg>
+            <span class="sr-only">Dribbble account</span>
+        </a>
+    </div>
+</div>
+
+@endsection

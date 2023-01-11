@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root
+{
+    --swiper-navigation-size: 16px;
+}
+
+body
+{
+    color: #222;
+    font-family: "Open Sans", sans-serif;
+
+    margin-bottom: 48px;
+}
+
+.image-absolute img {
+    opacity: 0;
+    position:absolute;
+    top:25px;
+    left: -10px;
+    -webkit-animation-name: fade;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 10s;
+    animation-name: fade;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+}
+
+@keyframes fade {
+    0% {opacity: 0;}
+    10% {opacity: 1;}
+    33% {opacity: 1;}
+    53% {opacity: 0;}
+    100% {opacity: 0;}
+}
+
+.car2 {
+    animation-delay: 5s;
+}
+
+.swiper-pagination-bullets {
+    display: none;
+}
+
+.card-image
+{
+    
+}
+
+.card-image img:after
+{
+    /*content: " ";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: red;
+    transform-origin: right bottom;
+    transform: skew(-3deg);*/
+}
+
+.swiper-button-prev {
+    color: red; 
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: white;
+    padding: 1rem;
+    border-radius: 50%;
+    top: 30%;
+    height: 48px; width: 48px;
+    background-color: #3B82F6;
+    
+    
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+
+}
+
+.swiper-button-next img, .swiper-button-prev img
+{
+    user-select: none;
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover
+{
+    background-color: #2563EB;
+}
+
+.swiper-button-next1, .swiper-button-prev1 {
+    color: white;
+    padding: 1rem;
+    border-radius: 50%;
+    top: 30%;
+    height: 48px; width: 48px;
+    background-color: #3B82F6;
+    
+    
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+
+}
+
+.swiper-button-next1 img, .swiper-button-prev1 img
+{
+    user-select: none;
+}
+
+.swiper-button-next1:hover, .swiper-button-prev1:hover
+{
+    background-color: #2563EB;
+}
+
+.search-text
+{
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+    display: none;
+  }
+
+  .spikes {
+    position: relative;
+    
+    
+  }
+  
+  .spikes::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    left: -0%;
+    top: 100%;
+    z-index: 10;
+    display: block;
+    height: 50px;
+    background-size: 50px 100%;
+    background-image: linear-gradient(135deg, #111827 25%, transparent 25%), linear-gradient(225deg, #111827 25%, transparent 25%);
+    background-position: 0 0;
+  }
+
+.swiper-button-disabled
+{
+    display: none;
+}
+
+.hexagon {
+    position: relative;
+    width: 250px;
+    height: 144.34px;
+    background: #3B82F6;
+    
+   /* transform: scale(0.5);*/
+  }
+
+  .hexagon::before,
+.hexagon::after {
+  content: "";
+  position: absolute;
+  border-left: 125px solid transparent;
+  border-right: 125px solid transparent;
+}
+
+.hexagon::before {
+    bottom: 100%;
+    border-bottom: 77.17px solid #3B82F6;
+  }
+
+  .hexagon::after {
+    top: 100%;
+    border-top: 77.17px solid #3B82F6;
+  }
+
+  .hexagon-1 {
+	width: 256px;
+	height: 221px; /* width*√3/2 */
+	clip-path: polygon(25% 0, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+	background: #3B82F6;
+}
+
+.img-category
+{
+    position: absolute;
+    top: 43%; right: 48%;
+    transform: translate(50%,-50%);
+}
+
+canvas{ display: block; vertical-align: bottom; } /* ---- particles.js container ---- */ #particles-js{ position:absolute; width: 100%; height: 100%; background-color: #3B82F6; background-image: url(""); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; } 
+
+.particles-div
+{
+    height: 512px;
+}
