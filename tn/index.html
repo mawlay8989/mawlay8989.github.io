@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tbezniss Home</title>
+    <title>Beezniss Home</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link
@@ -13,216 +13,473 @@
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="stylesheet" href="app1.css">
     
 </head>
 <body class="relative">
 
-<aside id="menu" class="fixed top-0 left-0 w-full hidden w-64 -ml-64 h-screen z-50 flex bg-gray-100 duration-600 border-r border-gray-500">
-    <div class="w-full flex flex-col space-y-4">
-        <a href="javascript:void(0)" onclick="closeMenu()"
-            class="text-right text-4xl hover:text-red-400 pr-5 mt-5">&times;</a>
+    <aside id="menu" class="bg-gray-100 transform top-0 left-0 w-64 bg-white fixed h-full overflow-auto ease-in-out transition-all duration-300 z-50 -translate-x-full">
+        <div class="w-full flex flex-col space-y-4">
+          <a href="javascript:void(0)" onclick="closeMenu()"
+              class="text-right text-4xl hover:text-red-400 pr-5 mt-3">&times;</a>
+      
+              <span class="text-sm px-5 text-gray-500">Mon Compte</span>
+              
+              <ul class="flex flex-col">
+                <li class="hover:bg-blue-500 hover:text-white transition duration-200">
+                  <a href="#" class=" font-bold">
+                    <div class="flex justify-start pl-6 py-2 gap-2 items-center">
+                      <i class="fa-solid fa-grip w-8 h-8 flex justify-center items-center"></i> <span>Beezzniss</span> 
+                    </div>
+                   
+                  </a>
+                </li>
+      
+                <li class="hover:bg-blue-500 hover:text-white transition duration-200">
+                  <a href="#" class=" font-bold">
+                    <div class="flex justify-start pl-6 py-2 gap-2 items-center">
+                      <i class="self-center fa-solid fa-star w-8 h-8 flex justify-center items-center"></i> <span>Favoris</span> 
+                    </div>
+                   
+                  </a>
+                </li>
+      
+                <li class="hover:bg-blue-500 hover:text-white transition duration-200">
+                  <a href="#" class=" font-bold">
+                    <div class="flex justify-start pl-6 py-2 gap-2 items-center">
+                      <i class="fa-solid fa-user w-8 h-8 flex justify-center items-center"></i> <span>Utilisateur</span> 
+                    </div>
+                   
+                  </a>
+                </li>
+      
+                <li class="hover:bg-blue-500 hover:text-white transition duration-200">
+                  <a href="#" class=" font-bold">
+                    <div class="flex justify-start pl-6 py-2 gap-2 items-center">
+                      <i class="fa-solid fa-cog w-8 h-8 flex justify-center items-center"></i> <span>Paramètres</span> 
+                    </div>
+                   
+                  </a>
+                </li>
+      
+                
+              </ul>
+      
+              <span class="text-sm px-5 text-gray-500">Catégories</span>
+      </div>
+      </aside>
 
-            <span class="text-sm px-5 text-gray-500">Mon Compte</span>
+      <nav class="sticky top-0 bg-[#1F2937] py-4 text-sm z-40 shadow-lg">
+        <div class="container w-full max-w-full mx-auto px-4 lg:px-16 flex gap-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center">
+                <button id="hamburger">
+                    <svg viewBox="0 0 100 80" width="24" height="24">
+                        <rect width="100" height="10" fill="white"></rect>
+                        <rect y="30" width="100" height="10" fill="white"></rect>
+                        <rect y="60" width="100" height="10" fill="white"></rect>
+                      </svg>
+                </button>
+                
+                <!--
+                <ul class="flex">
+                    <li class="p-3 rounded-lg bg-[#111827] cursor-pointer">
+                        <a href="" class="text-white">
+                            Home
+                        </a>
+                    </li>
+        
+                    <li class="p-3 rounded-lg hover:bg-[#374151] cursor-pointer">
+                        <a href="" class="text-white">
+                            Équipe
+                        </a>
+                    </li>
+        
+                    <li class="p-3 rounded-lg hover:bg-[#374151] cursor-pointer">
+                        <a href="" class="text-white">
+                            Projets
+                        </a>
+                    </li>
+        
+                    <li class="p-3 rounded-lg hover:bg-[#374151] cursor-pointer">
+                        <a href="" class="text-white">
+                            Calendrier
+                        </a>
+                    </li>
+                </ul>-->
+            </div>
+    
+            <!--
+            <div class="relative mx-auto text-gray-600 lg:block hidden">
+                <input
+                    class="border-2 border-gray-300 bg-white h-10 pl-4 pr-8 rounded-lg text-sm focus:outline-none w-full"
+                    type="search" name="search" placeholder="Recherche...">
+                <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
+                    <svg class="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
+                         version="1.1" id="Capa_1" x="0px" y="0px"
+                         viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;"
+                         xml:space="preserve"
+                         width="512px" height="512px">
+                <path
+                    d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"/>
+              </svg>
+                </button>
+            </div>
+    
+            <div class="pr-48">
+    
+            </div>-->
+    
             
-            <ul class="flex flex-col">
-              <li class="hover:bg-blue-500 hover:text-white transition duration-200">
-                <a href="#" class=" font-bold">
-                  <div class="flex justify-start pl-6 py-2 gap-2 items-center">
-                    <i class="fa-solid fa-grip w-8 h-8 flex justify-center items-center"></i> <span>Tbezniss</span> 
-                  </div>
-                 
-                </a>
-              </li>
+                <div class="relative self-center">
+                    <form>   
+                        <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                    <svg aria-hidden="true" class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                                </div>
+                                <input type="search" id="default-search" class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-100 focus:ring-blue-500 focus:border-blue-500" placeholder="Rechercher..." autocomplete="off" required>
+                                
+                            </div>
+                    </form>
+                    
+                    <div id="searchSuggestions" class="hidden absolute mt-2 w-full overflow-hidden rounded-md bg-gray-100 z-30 shadow-lg py-2">
+                        <span class="block px-1 pt-2 text-sm pl-3 font-bold text-blue-500">Recherches récentes</span>
+            
+                        <div class="py-1">
+                            <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
+                                <p class="text-sm font-bold text-gray-600">Laptop Asus</p>
+                                
+                              </div>
+                              <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
+                                <p class="text-sm font-bold text-gray-600">Chemise</p>
+                                
+                              </div>
+                              <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
+                                <p class="text-sm font-bold text-gray-600">Réfrigateur</p>
+                                
+                              </div>
+                              <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
+                                <p class="text-sm font-bold text-gray-600">Développeur web emploi</p>
+                                
+                              </div>
+                        </div>
+                        
+            
+                          <div class="px-4">
+                            <hr class="border-gray-300 border">
+                          </div>
+                          
+                          <span class="block px-1 pt-2 text-sm pl-3 font-bold text-blue-500">Suggestions</span>
+            
+                          <div class="py-1">
+                            <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
+                                <p class="text-sm font-bold text-gray-600">Carte Mère Asus</p>
+                                
+                              </div>
+                
+                              <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
+                                <p class="text-sm font-bold text-gray-600">Frigidaire Samsung</p>
+                                
+                              </div>
+                
+                              <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
+                                <p class="text-sm font-bold text-gray-600">Chemise Ralph-Lauren</p>
+                                
+                              </div>
+                
+                              <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
+                                <p class="text-sm font-bold text-gray-600">Développeur Mobile</p>
+                                
+                              </div>
+                          </div>
+                          
+                    </div>
+                </div>
+        
+                <div class="notification text-white flex items-center gap-5">
+                    <div class="flex gap-5 items-center">
+                        <button class="relative">
+                            <i class="fa-solid fa-bell text-lg text-gray-200 hover:text-white"></i>
+                            <span class="absolute top-1 left-2 block h-2.5 w-2.5 rounded-full bg-red-600"></span>
+                        </button>
+    
+                        <a href="">
+                            <i class="fa-solid fa-gear text-lg text-gray-200 hover:text-white"></i>
+                        </a>
+    
+                        
+    
+                        <div id="liCat" class="relative">
+                            <button id="userProfileButton" class="relative">
+                                <img src="assets/joseph.jpg" alt="" class="w-10 h-10 rounded-full">
+                                <span class="absolute bottom-1 left-7 transform translate-y-1/4 w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+                            </button>
+    
+                            <div id="dropdownDivider" class="absolute hidden top-12 right-0 z-10 bg-white divide-y divide-graymore rounded shadow w-40 dark:bg-darkcard dark:divide-darker border border-[#ececf3] dark:border-dark">
+                                <ul class="py-2 text-left text-sm font-bold text-black dark:text-white" aria-labelledby="dropdownDividerButton">
+                                  <li>
+                                    <a href="/courses" class="block py-1 pl-4 hover:bg-gray-200 dark:hover:bg-darker dark:hover:text-white">
+                                        Mes Favoris</a>
+                                  </li>
+    
+                                  <li>
+                                    <a href="/courses" class="block py-1 pl-4 hover:bg-gray-200 dark:hover:bg-darker dark:hover:text-white">
+                                        Mes Livraisons</a>
+                                  </li>
+    
+                                  <li>
+                                    <a href="/courses" class="block py-1 pl-4 hover:bg-gray-200 dark:hover:bg-darker dark:hover:text-white">
+                                        Mes Favoris</a>
+                                  </li>
+                
+                                  <hr class="border-gray-300 dark:border-dark my-2">
+    
+                                  <li>
+                                    <a href="/category/news" class="block py-1 pl-4 hover:bg-gray-200 dark:hover:bg-darker dark:hover:text-white">Profil</a>
+                                  </li>
+                
+                                  <li>
+                                    <a href="/category/self-help" class="block py-1 pl-4 hover:bg-gray-200 dark:hover:bg-darker dark:hover:text-white">Paramètres</a>
+                                  </li>
+    
+                                  <hr class="border-gray-300 dark:border-dark my-2">
+                
+                                  <li>
+                                    <a href="/category/self-help" class="block py-1 pl-4 hover:bg-gray-200 dark:hover:bg-darker dark:hover:text-white">Se Déconnecter</a>
+                                  </li>
+                                </ul>
+                            </div>
+                        </div>
+    
+                        
+                    </div>
+                    
+                    <!--
+                    <div>
+                        <a href="" class="p-2 px-4 bg-blue-500 hover:bg-blue-600 rounded-xl shadow flex gap-2 font-semibold items-center text-base"><img src="assets/('plus.svg')" alt="" width="20" height="20" class="fill-white"> Ajouter une Annonce</a>
+                        
+                    </div>-->
+                </div>
+            
+            
+            
+        </div>
+    </nav>
 
-              <li class="hover:bg-blue-500 hover:text-white transition duration-200">
-                <a href="#" class=" font-bold">
-                  <div class="flex justify-start pl-6 py-2 gap-2 items-center">
-                    <i class="self-center fa-solid fa-star w-8 h-8 flex justify-center items-center"></i> <span>Favoris</span> 
-                  </div>
-                 
-                </a>
-              </li>
-
-              <li class="hover:bg-blue-500 hover:text-white transition duration-200">
-                <a href="#" class=" font-bold">
-                  <div class="flex justify-start pl-6 py-2 gap-2 items-center">
-                    <i class="fa-solid fa-user w-8 h-8 flex justify-center items-center"></i> <span>Utilisateur</span> 
-                  </div>
-                 
-                </a>
-              </li>
-
-              <li class="hover:bg-blue-500 hover:text-white transition duration-200">
-                <a href="#" class=" font-bold">
-                  <div class="flex justify-start pl-6 py-2 gap-2 items-center">
-                    <i class="fa-solid fa-cog w-8 h-8 flex justify-center items-center"></i> <span>Paramètres</span> 
-                  </div>
-                 
-                </a>
-              </li>
-
-              
-            </ul>
-
-            <span class="text-sm px-5 text-gray-500">Catégories</span>
-    </div>
-</aside>
-
-<nav class="sticky top-0 bg-[#1F2937] py-4 text-sm z-40 shadow-lg">
-  <div class="container w-full max-w-full mx-auto px-4 lg:px-16 flex gap-4 flex justify-between items-center">
-      <div class="flex items-center">
-          <button id="hamburger">
-              <img src="assets/mark.svg" alt="" class="mr-5" width="32" height="32">
-          </button>
-              
-          <ul class="flex">
-              <li class="p-3 rounded-lg bg-[#111827] cursor-pointer">
-                  <a href="" class="text-white">
-                      Home
-                  </a>
-              </li>
-  
-              <li class="p-3 rounded-lg hover:bg-[#374151] cursor-pointer">
-                  <a href="" class="text-white">
-                      Équipe
-                  </a>
-              </li>
-  
-              <li class="p-3 rounded-lg hover:bg-[#374151] cursor-pointer">
-                  <a href="" class="text-white">
-                      Projets
-                  </a>
-              </li>
-  
-              <li class="p-3 rounded-lg hover:bg-[#374151] cursor-pointer">
-                  <a href="" class="text-white">
-                      Calendrier
-                  </a>
-              </li>
-          </ul>
-      </div>
-
-      <div class="relative mx-auto text-gray-600 lg:block hidden">
-          <input
-              class="border-2 border-gray-300 bg-white h-10 pl-4 pr-8 rounded-lg text-sm focus:outline-none"
-              type="search" name="search" placeholder="Recherche...">
-          <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
-              <svg class="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
-                   version="1.1" id="Capa_1" x="0px" y="0px"
-                   viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;"
-                   xml:space="preserve"
-                   width="512px" height="512px">
-          <path
-              d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"/>
-        </svg>
-          </button>
-      </div>
-
-      <div class="notification text-white flex items-center gap-5">
-          <div class="flex gap-5 items-center ">
-              <a href="">
-                  <i class="fa-solid fa-bell text-lg text-gray-200 hover:text-white"></i>
-              </a>
-
-             
-              
-              <img src="assets/joseph.jpg" alt="" width="32" height="32" class="rounded-full">
-              <a href="">
-                  <i class="fa-solid fa-gear text-lg text-gray-200 hover:text-white"></i>
-              </a>
-
-          </div>
-          
-          
-          <div>
-              <a href="" class="p-2 px-4 bg-blue-500 hover:bg-blue-600 rounded-xl shadow flex gap-2 font-semibold items-center text-base"><img src="assets/plus.svg" alt="" width="20" height="20" class="fill-white"> Ajouter une Annonce</a>
-              
-          </div>
-      </div>
-  </div>
-</nav>
-
-<div class="w-full relative particles-div mb-8">
-  <div id="particles-js" class="">
-      <h2 class="text-5xl font-bold mb-5 text-center search-text text-white mt-28">Rechercher sur Tbezniss</h2>
-  </div>
-
-  <section class="search px-4 lg:px-80 mb-32 pt-32">
-
-      <h2 class="text-5xl font-bold mb-5 text-center search-text text-white">Rechercher sur Tbezniss</h2>
-  
-      <div class="relative">
-          <form>   
-              <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-                  <div class="relative">
-                      <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                          <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+    <div class="w-full relative particles-div mb-32">
+        <div id="particles-js" class="relative">
+            
+            <h2 class="absolute text-5xl top-16 left-96 font-bold  search-text text-white ">Rechercher sur Beezzniss</h2>
+    
+            <section class="absolute bottom-16 right-0 categories mx-auto px-4 lg:px-32 max-w-full w-full">
+                <div class="container flex flex-col justify-center mx-auto">
+                    
+                    
+                            <!-- Slider main container -->
+                            <div class="swiperCateg">
+                                <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper text-white">
+                                <!-- Slides -->
+            
+            
+                                    <div class="swiper-slide text-center">
+                                        <div class="text-center hover:opacity-90 transition duration-200 cursor-pointer mb-20 w-full relative">
+                                            <img src="assets/hexagon-fill-blue.svg" alt="" class="img-category" width="128" height="128">
+                                            
+                                            <img src="assets/car2.png" alt="" class="img-category" width="80" height="80">
+                                        </div>
+                                        
+                                        <div class="">
+                                            <a href="#" class="font-bold transiton duration-200 hover:opacity-80">Automobile</a>
+                                        </div>
+                                        
+                                    </div>
+            
+                                    <div class="swiper-slide">
+                                        <div class="text-center hover:opacity-90 transition duration-200 cursor-pointer mb-20 w-full relative">
+                                            <img src="assets/hexagon-fill-red.svg" alt="" class="img-category" width="128" height="128">
+                                            <img src="assets/immo3.webp" alt="" class="img-category" width="80" height="80">
+                                        </div>
+                                        
+                                        <div class="flex justify-center">
+                                            <a href="#" class="font-bold transiton duration-200 hover:opacity-80">Immobilier</a>
+                                        </div>
+                                        
+                                    </div>
+            
+                                    <div class="swiper-slide">
+                                        <div class="text-center hover:opacity-90 transition duration-200 cursor-pointer mb-20 w-full relative">
+                                            <img src="assets/hexagon-fill-green.svg" alt="" class="img-category" width="128" height="128">
+                                            <img src="assets/chemise.png" alt="" class="img-category" width="80" height="80">
+                                        </div>
+                                        
+                                        <div class="flex justify-center">
+                                            <a href="#" class="font-bold transiton duration-200 hover:opacity-80">Vètements</a>
+                                        </div>
+                                        
+                                    </div>
+            
+                                    <div class="swiper-slide">
+                                        <div class="text-center hover:opacity-90 transition duration-200 cursor-pointer mb-20 w-full relative">
+                                            <img src="assets/hexagon-fill-orange.svg" alt="" class="img-category" width="128" height="128">
+                                            <img src="assets/laptop.png" alt="" class="img-category" width="80" height="80">
+                                        </div>
+                                        
+                                        <div class="flex justify-center">
+                                            <a href="#" class="font-bold transiton duration-200 hover:opacity-80">Informatique</a>
+                                        </div>
+                                        
+                                    </div>
+            
+                                    <div class="swiper-slide">
+                                        <div class="text-center hover:opacity-90 transition duration-200 cursor-pointer mb-20 w-full relative">
+                                            <img src="assets/hexagon-fill-violet.svg" alt="" class="img-category" width="128" height="128">
+                                            <img src="assets/emploi.png" alt="" class="img-category" width="80" height="80">
+                                        </div>
+                                        
+                                        <div class="flex justify-center">
+                                            <a href="#" class="font-bold transiton duration-200 hover:opacity-80">Emplois</a>
+                                        </div>
+                                        
+                                    </div>
+            
+                                    <div class="swiper-slide text-center">
+                                        <div class="text-center hover:opacity-90 transition duration-200 cursor-pointer mb-20 w-full relative">
+                                            <img src="assets/hexagon-fill-blue.svg" alt="" class="img-category" width="128" height="128">
+                                            <img src="assets/car2.png" alt="" class="img-category" width="80" height="80">
+                                        </div>
+                                        
+                                        <div class="">
+                                            <a href="#" class="font-bold transiton duration-200 hover:opacity-80">Automobile</a>
+                                        </div>
+                                        
+                                    </div>
+            
+                                    <div class="swiper-slide">
+                                        <div class="text-center hover:opacity-90 transition duration-200 cursor-pointer mb-20 w-full relative">
+                                            <img src="assets/hexagon-fill-red.svg" alt="" class="img-category" width="128" height="128">
+                                            <img src="assets/immo3.webp" alt="" class="img-category" width="80" height="80">
+                                        </div>
+                                        
+                                        <div class="flex justify-center">
+                                            <a href="#" class="font-bold transiton duration-200 hover:opacity-80">Immobilier</a>
+                                        </div>
+                                        
+                                    </div>
+            
+                                    <div class="swiper-slide">
+                                        <div class="text-center hover:opacity-90 transition duration-200 cursor-pointer mb-20 w-full relative">
+                                            <img src="assets/hexagon-fill-green.svg" alt="" class="img-category" width="128" height="128">
+                                            <img src="assets/chemise.png" alt="" class="img-category" width="80" height="80">
+                                        </div>
+                                        
+                                        <div class="flex justify-center">
+                                            <a href="#" class="font-bold transiton duration-200 hover:opacity-80">Vètements</a>
+                                        </div>
+                                        
+                                    </div>
+            
+                                    
+                                </div>
+                                <!-- If we need pagination -->
+                                <div class="swiper-pagination"></div>
+                            
+                                <!-- If we need navigation buttons -->
+                                <div class="swiper-button-prev1">
+                                    <img src="assets/arrow-left.svg" alt="" width="24" height="24">
+                                </div>
+                                <div class="swiper-button-next1">
+                                    <img src="assets/arrow-right.svg" alt="" width="24" height="24">
+                                </div>
+                            
+                            
+                            </div>
+                          
+                        
+                        
+                         
+                        
+                </div>
+            </section>
+        </div>
+    
+        <section class="search px-4 lg:px-80  pt-32">
+    
+            <h2 class="text-5xl font-bold mb-5 text-center search-text text-white">Rechercher sur Beezzness</h2>
+        
+            <!--
+            <div class="relative">
+                <form>   
+                    <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                <svg aria-hidden="true" class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                            </div>
+                            <input type="search" id="default-search" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-100 focus:ring-blue-500 focus:border-blue-500" placeholder="Rechercher des Annonces..." autocomplete="off" required>
+                            <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-4 py-2">Rechercher</button>
+                        </div>
+                </form>
+                
+                <div id="searchSuggestions" class="hidden absolute mt-2 w-full overflow-hidden rounded-md bg-gray-100 z-30 shadow-lg py-2">
+                    <span class="block px-1 pt-2 text-sm pl-3 font-bold text-blue-500">Recherches récentes</span>
+        
+                    <div class="py-1">
+                        <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
+                            <p class="text-sm font-bold text-gray-600">Laptop Asus</p>
+                            
+                          </div>
+                          <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
+                            <p class="text-sm font-bold text-gray-600">Chemise</p>
+                            
+                          </div>
+                          <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
+                            <p class="text-sm font-bold text-gray-600">Réfrigateur</p>
+                            
+                          </div>
+                          <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
+                            <p class="text-sm font-bold text-gray-600">Développeur web emploi</p>
+                            
+                          </div>
+                    </div>
+                    
+        
+                      <div class="px-4">
+                        <hr class="border-gray-300 border">
                       </div>
-                      <input type="search" id="default-search" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-100 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Rechercher des Annonces..." autocomplete="off" required>
-                      <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-600">Rechercher</button>
-                  </div>
-          </form>
-          
-          <div id="searchSuggestions" class="hidden absolute mt-2 w-full overflow-hidden rounded-md bg-gray-100 z-30 shadow-lg py-2">
-              <span class="block px-1 pt-2 text-sm pl-3 font-bold text-blue-500">Recherches récentes</span>
-  
-              <div class="py-1">
-                  <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
-                      <p class="text-sm font-bold text-gray-600">Laptop Asus</p>
                       
-                    </div>
-                    <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
-                      <p class="text-sm font-bold text-gray-600">Chemise</p>
+                      <span class="block px-1 pt-2 text-sm pl-3 font-bold text-blue-500">Suggestions</span>
+        
+                      <div class="py-1">
+                        <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
+                            <p class="text-sm font-bold text-gray-600">Carte Mère Asus</p>
+                            
+                          </div>
+            
+                          <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
+                            <p class="text-sm font-bold text-gray-600">Frigidaire Samsung</p>
+                            
+                          </div>
+            
+                          <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
+                            <p class="text-sm font-bold text-gray-600">Chemise Ralph-Lauren</p>
+                            
+                          </div>
+            
+                          <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
+                            <p class="text-sm font-bold text-gray-600">Développeur Mobile</p>
+                            
+                          </div>
+                      </div>
                       
-                    </div>
-                    <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
-                      <p class="text-sm font-bold text-gray-600">Réfrigateur</p>
-                      
-                    </div>
-                    <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
-                      <p class="text-sm font-bold text-gray-600">Développeur web emploi</p>
-                      
-                    </div>
-              </div>
-              
-  
-                <div class="px-4">
-                  <hr class="border-gray-300 border">
                 </div>
-                
-                <span class="block px-1 pt-2 text-sm pl-3 font-bold text-blue-500">Suggestions</span>
-  
-                <div class="py-1">
-                  <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
-                      <p class="text-sm font-bold text-gray-600">Carte Mère Asus</p>
-                      
-                    </div>
-      
-                    <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
-                      <p class="text-sm font-bold text-gray-600">Frigidaire Samsung</p>
-                      
-                    </div>
-      
-                    <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
-                      <p class="text-sm font-bold text-gray-600">Chemise Ralph-Lauren</p>
-                      
-                    </div>
-      
-                    <div class="cursor-pointer py-1 px-3 pl-6 hover:bg-slate-200">
-                      <p class="text-sm font-bold text-gray-600">Développeur Mobile</p>
-                      
-                    </div>
-                </div>
-                
-          </div>
-      </div>
-      
-      
-  
-  </section>
-</div>
+            </div>-->
+            
+            
+        
+        </section>
+    </div>
 
 
 
@@ -870,107 +1127,156 @@
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-<script>
-    const swiper = new Swiper('.swiperCats', {
-  // Optional parameters
-  slidesPerView: 3.3,
-  spaceBetween: 30,
-  direction: 'horizontal',
-
+<button id="fab" class="text-white bg-blue-500 hover:bg-blue-600">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
   
- 
-  loop: false,
-
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});
-
-const swiperCateg = new Swiper('.swiperCateg', {
-  // Optional parameters
-  slidesPerView: 8.2,
-  direction: 'horizontal',
-  spaceBetween: 10,
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script>
+      const swiper = new Swiper('.swiperCats', {
+    // Optional parameters
+    slidesPerView: 3.3,
+    spaceBetween: 30,
+    direction: 'horizontal',
   
- 
-  loop: false,
-
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next1',
-    prevEl: '.swiper-button-prev1',
-  },
-
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});
-
-var menu = document.querySelector("#menu");
-var main = document.querySelector("#main");
-var hamburger = document.querySelector('#hamburger');
-
-var nav = false;
-        // show the menu
-        function openMenu() {
-            menu.classList.remove('-ml-64');
-            menu.classList.remove('hidden');
-            menu.classList.add('ml-0');
-            nav = true;
+    
+   
+    loop: false,
+  
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  });
+  
+  const swiperCateg = new Swiper('.swiperCateg', {
+    // Optional parameters
+    slidesPerView: 8.2,
+    direction: 'horizontal',
+    spaceBetween: 10,
+    
+   
+    loop: false,
+  
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next1',
+      prevEl: '.swiper-button-prev1',
+    },
+  
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  });
+  
+  var menu = document.querySelector("#menu");
+  var main = document.querySelector("#main");
+  var hamburger = document.querySelector('#hamburger');
+  
+  var nav = false;
+          // show the menu
+          function openMenu() {
+           
+              menu.classList.add('translate-x-0');
+              menu.classList.remove('-translate-x-full');
+              nav = true;
+          }
+  
+          // make the menu "go away"
+          function closeMenu() {
+            
+            menu.classList.remove('translate-x-0');
+              menu.classList.add('-translate-x-full');
+              nav = false;
+          }
+  
+          hamburger.addEventListener('click', function() {
+            nav ? closeMenu() : openMenu();
+          });
+  
+          let defaultSearch = document.querySelector("#default-search");
+  let searchSuggestions = document.querySelector("#searchSuggestions");
+  
+  defaultSearch.addEventListener('focus', function() {
+    searchSuggestions.classList.remove('hidden');
+  });
+  
+  defaultSearch.addEventListener('focusout', function() {
+    searchSuggestions.classList.add('hidden');
+  });
+  
+  let fab = document.querySelector('#fab');
+  
+        function handleScroll()
+        {
+          let scrollableHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          let gr = 0.40;
+  
+          if ((document.documentElement.scrollTop / scrollableHeight ) > gr) {
+            if(!fab.classList.contains("fab-fadein"))
+              fab.classList.add("fab-fadein")
+            } else {
+              //hide button
+              if(fab.classList.contains("fab-fadein"))
+              fab.classList.remove("fab-fadein")
+            }
         }
-
-        // make the menu "go away"
-        function closeMenu() {
-            menu.classList.remove('ml-0');
-            menu.classList.add('-ml-64');
-            menu.classList.add('hidden');
-            nav = false;
+  
+        fab.addEventListener("click", scrollToTop);
+  
+        function scrollToTop()
+        {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
         }
-
-        hamburger.addEventListener('click', function() {
-          nav ? closeMenu() : openMenu();
+  
+        let catButton = document.querySelector('#userProfileButton');
+        let catDiv = document.querySelector('#dropdownDivider');
+        let liCat = document.querySelector('#liCat');
+  
+        catButton.addEventListener('click', function() {
+          catDiv.classList.toggle('hidden');
         });
-
-        let defaultSearch = document.querySelector("#default-search");
-let searchSuggestions = document.querySelector("#searchSuggestions");
-
-defaultSearch.addEventListener('focus', function() {
-  searchSuggestions.classList.remove('hidden');
-});
-
-defaultSearch.addEventListener('focusout', function() {
-  searchSuggestions.classList.add('hidden');
-});
-
-</script>
-
-<script src="assets/js/particles.min.js"></script>
-
-<script>
-  /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-particlesJS.load('particles-js', 'assets/js/particles.json', function() {
-  console.log('callback - particles.js config loaded');
-});
-</script>
+  
+        document.addEventListener('click', function(event) {
+          if(!liCat.contains(event.target)) 
+          {
+            catDiv.classList.add('hidden');
+          }
+        
+        });
+  
+  </script>
+  
+  <script src="{{ asset('js/particles.min.js') }}"></script>
+  
+  <script>
+    /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+  particlesJS.load('particles-js', 'js/particles.json', function() {
+    console.log('callback - particles.js config loaded');
+  });
+  </script>
+  
+  <script> </script>
 
 </body>
 </html>
